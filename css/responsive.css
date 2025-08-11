@@ -1,0 +1,45 @@
+@media (max-width: 1200px) {
+    body {
+        font-size: 14px;
+    }
+    
+    .container {
+        padding: 20px;
+    }
+    
+    .project-card {
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+    }
+    
+    .nav-links {
+        display: block;
+        margin: 10px 0;
+    }
+    
+    .hero {
+        text-align: center;
+    }
+    
+    .hero h1 {
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-title {
+        font-size: 1.5em;
+    }
+    
+    .contact-form input,
+    .contact-form textarea {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}

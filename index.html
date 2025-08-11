@@ -1,114 +1,154 @@
-<!doctype html>
-<html lang="es">
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Portafolio Profesional</title>
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>William Portafolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 
 <body>
-  <header>
-    <div class="header-container">
-      <div class="header-container-logo">
-        <a href="index.html"><img src="images/favicon.ico" alt="Inicio" id="header-logo"></a>
-      </div>
-      <div class="header-container-list">
-        <ol>
-          <li><a href="aboutme.html">About me</a>
-          </li>
-          <li><a href="contact.html">Contact</a>
-          </li>
-          <li><a href="projects.html">Projects</a>
-          </li>
-          <li style="margin-bottom: 5px;"><a href="prueba.html">Prueba</a>
-          </li>
-        </ol>
-      </div>
-    </div>
-  </header>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Portafolio</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link active">Inicio</a></li>
+                <li><a href="#about" class="nav-link">Acerca de</a></li>
+                <li><a href="#projects" class="nav-link">Proyectos</a></li>
+                <li><a href="#contact" class="nav-link">Contacto</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
 
-  <main>
-   
-      
-    
-    <h1 class="titulo">Learning from scratch</h1>
+    <section id="home" class="section active">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Hola, soy <span class="highlight">William Wadde</span></h1>
+                <p class="hero-subtitle">Desarrollador backend Java/Typescript</p>
+                <p class="hero-description">Convierto problemas en soluciones</p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">Mis proyectos</a>
+                    <a href="#contact" class="btn btn-secondary">Ponerse en contacto</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="floating-card">
+                    <i class="fas fa-code"></i>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <p>While testing out different <abbr title="Headings">'H'</abbr> out here, Lorem ipsum dolor sit amet, consectetur
-      adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-      nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-      reprehenderit
-      in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-      sunt
-      in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">Acerca de mi</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Soy desarrollador backend especializado en Java y Spring Boot, con experiencia en la construcción
+                        de microservicios seguros, la integración de servicios externos y la implementación de patrones
+                        de diseño. Aunque mi fuerte es el backend, también desarrollo interfaces atractivas con React y
+                        comprendo a fondo el trabajo en el frontend. Mi enfoque es crear soluciones sólidas, escalables
+                        y fáciles de mantener.</p>
+                    <div class="skills">
+                        <h3>Tecnologías que manejo</h3>
+                        <div class="skills-grid">
 
-    <p title="what are you looking at">On the following we will see the progress in this guy's coding skills starting
-      off
-      with the basics from bottom html to further hardcore code "C" probably </p>
+                            <div class="skill-item">
+                                <i class="fa-solid fa-power-off"></i>
+                                <span>SpringBoot</span>
+                            </div>
 
-    <p title="Second paragraph;">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam aperiam explicabo, delectus, iusto necessitatibus recusandae doloribus perferendis dolorum aliquam est quo mollitia! Nam, velit culpa at id aliquam nesciunt numquam?
-    <blockquote
-      cite="https://www.psicologosencolladovillalba.es/es/noticias/si-buscas-resultados-distintos-no-hagas-siempre-lo-mismo/">
-      "Si buscas resultados distintos no hagas siempre lo mismo"
-    </blockquote>
-    </p>
-  </main>
+                            <div class="skill-item">
+                                <i class="fa-brands fa-java"></i>
+                                <span>Java</span>
+                            </div>
 
-  <!-- Probando notas -->
-  <!-- Probando notas -->
-  <section>
-    <div class="container">
-      <div class="item">
-        <img src="images/1.jpg" alt="Cyberpunk">
-        <h2>Imagen 1</h2>
-      </div>
-      <div class="item">
-        <img src="images/7.png" alt="Cyberpunk">
-        <h2>Imagen 2</h2>
-      </div>
-      <div class="item">
-        <img src="images/12.jpg" alt="Futurista">
-        <h2>Imagen 3</h2>
-      </div>
-      <div class="item">
-        <img src="images/15.jpg" alt="Pareja">
-        <h2>Imagen 4</h2>
-      </div>
-      <div class="item">
-        <img src="images/17.jpg" alt="Tokyo">
-        <h2>Imagen 5</h2>
-      </div>
-    </div>
-  </section>
+                            <div class="skill-item">
+                                <i class="fab fa-react"></i>
+                                <span>React</span>
+                            </div>
 
-
-
-  <p>Another image using the html link through imgur:</p>
-
-
-  <address>
-    Written by William W. <br>
-    Colombia, 2022 <a href="https://www.youtube.com/channel/UC-rYPkeRUV8-Xp8tFb0DNOQ" ; target="blank;">
-      <img src="images/youtube-logo.png" alt="Youtube" style="width:30px;height:15px;">
-    </a>
-
-  </address>
-
-  <hr>
-
-  <div>
-
-    <a href="aboutme.html" style="text-align:center;float:right;">Second Page</a>
-    <br>
-    <br>
-  </div>
+                            <div class="skill-item">
+                                <i class="fa-solid fa-database"></i>
+                                <span>Bases de datos relacionales</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fab fa-js"></i>
+                                <span>JavaScript/TypeScript</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fab fa-git-alt"></i>
+                                <span>Git</span>
+                            </div>
 
 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">Mis projectos</h2>
+            <div id="projects-container" class="projects-grid">
 
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Contacto</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Trabajemos juntos</h3>
+                    <p>Estoy interesado en nuevas oportunidades y construir proyectos</p>
+                    <div class="contact-items">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span id="em-obf"></span>
+                        
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span id="ph-obf"></span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Colombia-Ibague</span>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form" id="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Tu nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Tu Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" placeholder="Tu mensaje" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/main.js"></script>
+    <script src="js/projects.js"></script>
 </body>
 
 </html>
