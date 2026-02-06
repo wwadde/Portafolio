@@ -1,0 +1,11 @@
+@import '@fortawesome/fontawesome-free/css/all.css';
+@import './css/style.css';
+@import './css/responsive.css';
+
+@import 'tailwindcss';
+
+@theme {
+  --color-primary: #5c15a3;
+  --color-secondary: #8a2be2;
+  --color-accent: #ff6b35;
+}

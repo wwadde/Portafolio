@@ -1,3 +1,6 @@
+// Import projects module
+import './projects.js';
+
 document.addEventListener('DOMContentLoaded', function() {
     // Smooth scrolling and section navigation
     const navLinks = document.querySelectorAll('.nav-link');
