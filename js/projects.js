@@ -4,7 +4,13 @@ const projects = [
         description: "Aplicacion web en microservicios con descubrimiento de servicios, autenticacion y autorizacion, y frontend en Angular.",
         technologies: ["Java", "Springboot", "PostgreSQL", "Angular", "Docker"],
         link: "https://github.com/wwadde/simulacion-credito-bancario"
-    }
+    },
+    {
+        title: "Cobranza",
+        description: "Aplicacion web para gestionar préstamos con roles de administrador y cobrador, visualización de estadísticas, generación de reportes y monitoreo de métricas.",
+        technologies: ["Java", "Springboot", "PostgreSQL", "Docker", "JavaScript", "TailwindCSS", "JasperReports", "Prometheus", "Grafana", "JTE", "JUnit", "Mockito"],
+        link: "https://cobranza.work"
+    },
 ];
 
 function displayProjects() {
