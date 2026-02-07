@@ -1,6 +1,6 @@
 import '@fortawesome/fontawesome-free/css/all.css';
 import { displayProjects } from './projects.js';
-import { toggleLang, applyTranslations, t } from './i18n.js';
+import { toggleLang, applyTranslations, t, getLang } from './i18n.js';
 
 document.addEventListener('DOMContentLoaded', function () {
     const navLinks = document.querySelectorAll('.nav-link');
@@ -57,6 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
     langToggle.addEventListener('click', function () {
         toggleLang();
         displayProjects();
+        updateCV();
     });
 
     const contactForm = document.getElementById('contact-form');
@@ -108,4 +109,20 @@ function displayContactInfo() {
     const todojunto2 = `+${atob(p5)} ${atob(p6)}${atob(p7)}${atob(p8)}`;
     elm1.innerHTML = `<a href="mailto:${todojunto1}">${todojunto1}</a>`;
     elm2.innerHTML = todojunto2;
+}
+
+function updateCV() {
+    const lang = getLang();
+    const cvViewer = document.getElementById('cv-viewer');
+    const cvDownload = document.getElementById('cv-download');
+    
+    const cvPath = `/assets/CV_William Wadde_${lang}.pdf`;
+    
+    if (cvViewer) {
+        cvViewer.src = cvPath;
+    }
+    
+    if (cvDownload) {
+        cvDownload.href = cvPath;
+    }
 }

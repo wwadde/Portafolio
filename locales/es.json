@@ -3,6 +3,7 @@
     "home": "Inicio",
     "about": "Acerca de",
     "projects": "Proyectos",
+    "cv": "CV",
     "contact": "Contacto"
   },
   "hero": {
@@ -22,6 +23,11 @@
     "title": "Mis proyectos",
     "view": "Ver proyecto",
     "technologies": "Tecnologías:"
+  },
+  "cv": {
+    "title": "Curriculum Vitae",
+    "description": "Puedes descargar mi CV o verlo a continuación",
+    "download": "Descargar CV"
   },
   "contact": {
     "title": "Contacto",

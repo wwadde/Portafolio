@@ -3,6 +3,7 @@
     "home": "Home",
     "about": "About",
     "projects": "Projects",
+    "cv": "Resume",
     "contact": "Contact"
   },
   "hero": {
@@ -22,6 +23,11 @@
     "title": "My projects",
     "view": "View project",
     "technologies": "Technologies:"
+  },
+  "cv": {
+    "title": "Resume",
+    "description": "You can download my resume or view it below",
+    "download": "Download Resume"
   },
   "contact": {
     "title": "Contact",
