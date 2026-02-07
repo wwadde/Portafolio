@@ -38,8 +38,9 @@
     "ph_email": "Tu Email",
     "ph_message": "Tu mensaje",
     "submit": "Enviar mensaje",
-    "success": "¡Gracias por tu mensaje! Te responderé pronto.",
-    "error": "Por favor completa todos los campos."
+    "sending": "Enviando...",
+    "success": "¡Mensaje enviado con éxito! Te contactaré pronto.",
+    "error": "Hubo un error al enviar el mensaje. Por favor, intenta nuevamente."
   },
   "meta": {
     "title": "William Wadde - Portafolio",

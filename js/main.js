@@ -1,6 +1,7 @@
 import '@fortawesome/fontawesome-free/css/all.css';
 import { displayProjects } from './projects.js';
 import { toggleLang, applyTranslations, t, getLang } from './i18n.js';
+import emailjs from '@emailjs/browser';
 
 document.addEventListener('DOMContentLoaded', function () {
     const navLinks = document.querySelectorAll('.nav-link');
@@ -8,6 +9,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
     const langToggle = document.getElementById('lang-toggle');
+
+    // Inicializar EmailJS con variable de entorno
+    emailjs.init(import.meta.env.EMAILJS_PUBLIC_KEY);
 
     function showSection(targetId) {
         sections.forEach(section => section.classList.remove('active'));
@@ -65,17 +69,30 @@ document.addEventListener('DOMContentLoaded', function () {
         contactForm.addEventListener('submit', function (e) {
             e.preventDefault();
 
-            const formData = new FormData(this);
-            const name = formData.get('name');
-            const email = formData.get('email');
-            const message = formData.get('message');
-
-            if (name && email && message) {
-                alert(t('contact.success'));
-                this.reset();
-            } else {
-                alert(t('contact.error'));
-            }
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            
+            // Deshabilitar botón y mostrar estado de envío
+            submitBtn.disabled = true;
+            submitBtn.textContent = t('contact.sending') || 'Enviando...';
+            emailjs.sendForm(
+                import.meta.env.EMAILJS_SERVICE_ID,
+                import.meta.env.EMAILJS_TEMPLATE_ID,
+                this
+            )
+                .then(function(response) {
+                    console.log('Email enviado con éxito!', response.status, response.text);
+                    alert(t('contact.success') || '¡Mensaje enviado con éxito! Te contactaré pronto.');
+                    contactForm.reset();
+                }, function(error) {
+                    console.error('Error al enviar email:', error);
+                    alert(t('contact.error') || 'Hubo un error al enviar el mensaje. Por favor, intenta nuevamente.');
+                })
+                .finally(function() {
+                    // Restaurar botón
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = originalText;
+                });
         });
     }
 

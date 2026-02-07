@@ -38,8 +38,9 @@
     "ph_email": "Your Email",
     "ph_message": "Your message",
     "submit": "Send message",
-    "success": "Thank you for your message! I'll get back to you soon.",
-    "error": "Please fill in all fields."
+    "sending": "Sending...",
+    "success": "Message sent successfully! I'll contact you soon.",
+    "error": "There was an error sending the message. Please try again."
   },
   "meta": {
     "title": "William Wadde - Portfolio",
