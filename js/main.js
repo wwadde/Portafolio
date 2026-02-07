@@ -119,7 +119,7 @@ function updateCV() {
     const cvPath = `/assets/CV_William Wadde_${lang}.pdf`;
     
     if (cvViewer) {
-        cvViewer.src = cvPath;
+        cvViewer.data = cvPath;
     }
     
     if (cvDownload) {

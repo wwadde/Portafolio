@@ -136,7 +136,12 @@
                 </a>
             </div>
             <div class="max-w-5xl mx-auto bg-white rounded-2xl shadow-brand overflow-hidden" style="height: 70vh;">
-                <iframe id="cv-viewer" src="/assets/CV_William Wadde_es.pdf" class="w-full h-full border-0" title="CV Preview"></iframe>
+                <object id="cv-viewer" data="/assets/CV_William Wadde_es.pdf" type="application/pdf" class="w-full h-full border-0">
+                    <p class="p-8 text-center text-gray-600">
+                        <span data-i18n="cv.view_message">No se puede mostrar el PDF. </span>
+                        <a href="/assets/CV_William Wadde_es.pdf" download class="text-primary font-semibold hover:underline" data-i18n="cv.download_alternative">Descargar aquí</a>
+                    </p>
+                </object>
             </div>
         </div>
     </section>
