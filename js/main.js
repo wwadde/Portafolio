@@ -38,8 +38,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
             if (targetId === '#contact') displayContactInfo();
             if (targetId === '#cv') {
-                // Cargar CV solo cuando se navega a la sección
-                setTimeout(() => updateCV(), 100);
+                // Cargar CV de forma segura
+                updateCV();
             }
 
             navMenu.classList.remove('active');
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 showSection(targetId);
                 if (targetId === '#contact') displayContactInfo();
                 if (targetId === '#cv') {
-                    setTimeout(() => updateCV(), 100);
+                    updateCV();
                 }
             });
         }
@@ -145,16 +145,17 @@ function displayContactInfo() {
 
 function updateCV() {
     const lang = getLang();
+    const cvPath = `/assets/CV_William Wadde_${lang}.pdf`;
+    
     const cvViewer = document.getElementById('cv-viewer');
     const cvDownload = document.getElementById('cv-download');
     
-    const cvPath = `/assets/CV_William Wadde_${lang}.pdf`;
-    
-    if (cvViewer) {
-        cvViewer.data = cvPath;
+    if (!cvViewer && !cvDownload) {
+        console.warn('No se han encontrado los elementos para mostrar o descargar el CV.');
+        return;
     }
     
-    if (cvDownload) {
-        cvDownload.href = cvPath;
-    }
+    // Actualizar elementos de forma segura
+    cvViewer?.setAttribute('data', cvPath);
+    cvDownload?.setAttribute('href', cvPath);
 }

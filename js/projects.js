@@ -1,4 +1,5 @@
 import { t, getLang } from './i18n.js';
+import { initImageModal } from './imageModal.js';
 
 const projects = [
     {
@@ -24,8 +25,8 @@ const projects = [
             en: "Collections Management",
         },
         description: {
-            es: "Aplicación web para gestionar préstamos con roles de administrador y cobrador, visualización de estadísticas, generación de reportes y monitoreo de métricas.",
-            en: "Web application for managing loans with admin and collector roles, statistics visualization, report generation, and metrics monitoring.",
+            es: "Aplicación web para gestionar préstamos con roles de administrador y cobrador, visualización de estadísticas, generación de reportes y monitoreo de métricas. <a href='https://www.linkedin.com/feed/update/urn:li:activity:7399551069430751234/' target='_blank' rel='noopener noreferrer' class='text-blue-600 hover:text-blue-800 underline hover:no-underline font-medium'>Ver post en LinkedIn</a>",
+            en: "Web application for managing loans with admin and collector roles, statistics visualization, report generation, and metrics monitoring. <a href='https://www.linkedin.com/feed/update/urn:li:activity:7399551069430751234/' target='_blank' rel='noopener noreferrer' class='text-blue-600 hover:text-blue-800 underline hover:no-underline font-medium'>See LinkedIn Post</a>",
         },
         technologies: [
             "Java", "Springboot", "PostgreSQL", "Docker", "JavaScript",
@@ -34,8 +35,16 @@ const projects = [
         ],
         link: "https://cobranza.work",
         images: [
-            "/assets/projects/cobranza-1.svg",
-            "/assets/projects/cobranza-2.svg",
+            "/assets/projects/cobranza/cobrador.webp",
+            "/assets/projects/cobranza/credito-detalle.webp",
+            "/assets/projects/cobranza/creditos-generales.webp",
+            "/assets/projects/cobranza/estadisticas-cobradores.webp",
+            "/assets/projects/cobranza/estadisticas-generales.webp",
+            "/assets/projects/cobranza/inicio-admin.webp",
+            "/assets/projects/cobranza/login.webp",
+            "/assets/projects/cobranza/morosos.webp",
+            "/assets/projects/cobranza/recibo.webp",
+            "/assets/projects/cobranza/estructura-proyecto.webp"
         ],
     },
 ];
@@ -60,7 +69,7 @@ export function displayProjects() {
             const carouselId = `carousel-${projectIndex}`;
             
             imageSection = `
-                <div class="relative h-48 group" data-carousel="${carouselId}">
+                <div class="relative h-48 group" data-carousel="${carouselId}" data-project-index="${projectIndex}">
                     ${project.images.map((img, idx) => `
                         <img src="${img}" 
                              alt="${title} - imagen ${idx + 1}" 
@@ -128,7 +137,8 @@ export function displayProjects() {
         container.appendChild(card);
     });
 
-    initCarousels();
+    const carousels = initCarousels();
+    initImageModal(projects, carousels);
 }
 
 function initCarousels() {
@@ -179,6 +189,8 @@ function initCarousels() {
             updateCarousel(state);
         });
     });
+    
+    return carousels;
 }
 
 function setupTouchEvents(carousel, carouselId, carousels) {
