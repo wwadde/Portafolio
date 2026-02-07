@@ -1,5 +1,6 @@
 {
   "nav": {
+    "portfolio": "Portafolio",
     "home": "Inicio",
     "about": "Acerca de",
     "projects": "Proyectos",
@@ -39,5 +40,9 @@
     "submit": "Enviar mensaje",
     "success": "¡Gracias por tu mensaje! Te responderé pronto.",
     "error": "Por favor completa todos los campos."
+  },
+  "meta": {
+    "title": "William Wadde - Portafolio",
+    "description": "Desarrollador Backend especializado en Java y Spring Boot. Construcción de microservicios, APIs REST y soluciones escalables."
   }
 }

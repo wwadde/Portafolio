@@ -6,7 +6,7 @@ const translations = {
     en: flattenObject(enTranslations),
 };
 
-let currentLang = "en";
+let currentLang = "es";
 
 function flattenObject(obj, prefix = '') {
     return Object.keys(obj).reduce((acc, key) => {
@@ -57,4 +57,15 @@ export function applyTranslations() {
     }
 
     document.documentElement.lang = currentLang;
+    
+    const title = t("meta.title");
+    if (title && title !== "meta.title") {
+        document.title = title;
+    }
+    
+    const metaDescription = document.querySelector('meta[name="description"]');
+    const description = t("meta.description");
+    if (metaDescription && description && description !== "meta.description") {
+        metaDescription.setAttribute("content", description);
+    }
 }

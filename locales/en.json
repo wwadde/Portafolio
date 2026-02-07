@@ -1,5 +1,6 @@
 {
   "nav": {
+    "portfolio": "Portfolio",
     "home": "Home",
     "about": "About",
     "projects": "Projects",
@@ -39,5 +40,9 @@
     "submit": "Send message",
     "success": "Thank you for your message! I'll get back to you soon.",
     "error": "Please fill in all fields."
+  },
+  "meta": {
+    "title": "William Wadde - Portfolio",
+    "description": "Backend Developer specialized in Java and Spring Boot. Building microservices, REST APIs and scalable solutions."
   }
 }
