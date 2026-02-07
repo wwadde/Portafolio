@@ -2,35 +2,35 @@ import { t, getLang } from './i18n.js';
 import { initImageModal } from './imageModal.js';
 
 const projects = [
-        {
-            title: {
-                es: "Cobranza",
-                en: "Collections Management",
-            },
-            description: {
+    {
+        title: {
+            es: "Cobranza",
+            en: "Collections Management",
+        },
+        description: {
             es: "Plataforma web <strong>en producción</strong> para gestionar préstamos y cobranzas con roles diferenciados (Administrador/Cobrador). Incluye generación automática de recibos PDF, dashboards con estadísticas en tiempo real, control de morosos, reestructuración de créditos y sistema completo de reportería profesional. <a href='https://www.linkedin.com/feed/update/urn:li:activity:7399551069430751234/' target='_blank' rel='noopener noreferrer' class='text-blue-600 hover:text-blue-800 underline hover:no-underline font-medium'>Ver post en LinkedIn</a>",
             en: "Web platform <strong>in production</strong> for managing loans and collections with differentiated roles (Admin/Collector). Features automatic PDF receipt generation, real-time statistics dashboards, delinquency control, credit restructuring, and comprehensive professional reporting system. <a href='https://www.linkedin.com/feed/update/urn:li:activity:7399551069430751234/' target='_blank' rel='noopener noreferrer' class='text-blue-600 hover:text-blue-800 underline hover:no-underline font-medium'>View LinkedIn Post</a>",
         },
-            technologies: [
-                "Java", "Springboot", "PostgreSQL", "Docker", "JavaScript",
-                "TailwindCSS", "JasperReports", "Prometheus", "Grafana", "JTE",
-                "JUnit", "Mockito",
-            ],
-            link: "https://cobranza.work",
-            images: [
-                "/assets/projects/cobranza/cobrador.webp",
-                "/assets/projects/cobranza/credito-detalle.webp",
-                "/assets/projects/cobranza/creditos-generales.webp",
-                "/assets/projects/cobranza/estadisticas-cobradores.webp",
-                "/assets/projects/cobranza/estadisticas-generales.webp",
-                "/assets/projects/cobranza/inicio-admin.webp",
-                "/assets/projects/cobranza/login.webp",
-                "/assets/projects/cobranza/morosos.webp",
-                "/assets/projects/cobranza/recibo.webp",
-                "/assets/projects/cobranza/estructura-proyecto.webp"
-            ],
-        },
-        {
+        technologies: [
+            "Java", "Springboot", "PostgreSQL", "Docker", "JavaScript",
+            "TailwindCSS", "JasperReports", "Prometheus", "Grafana", "JTE",
+            "JUnit", "Mockito",
+        ],
+        link: "https://cobranza.work",
+        images: [
+            "/assets/projects/cobranza/cobrador.webp",
+            "/assets/projects/cobranza/credito-detalle.webp",
+            "/assets/projects/cobranza/creditos-generales.webp",
+            "/assets/projects/cobranza/estadisticas-cobradores.webp",
+            "/assets/projects/cobranza/estadisticas-generales.webp",
+            "/assets/projects/cobranza/inicio-admin.webp",
+            "/assets/projects/cobranza/login.webp",
+            "/assets/projects/cobranza/morosos.webp",
+            "/assets/projects/cobranza/recibo.webp",
+            "/assets/projects/cobranza/estructura-proyecto.webp"
+        ],
+    },
+    {
         title: {
             es: "Sistema Bancario de Créditos",
             en: "Banking Credit System",
@@ -40,8 +40,8 @@ const projects = [
             en: "Complete banking credit management system with microservices architecture, featuring JWT authentication, API Gateway, dynamic service discovery with Eureka and load balancing. Manages clients, accounts and credits with enterprise-level security and high availability.",
         },
         technologies: [
-            "Spring Boot", "Spring Cloud", "Eureka", "OAuth2", 
-            "API Gateway", "Feign Client", "Circuit Breaker", "Angular 20", 
+            "Spring Boot", "Spring Cloud", "Eureka", "OAuth2",
+            "API Gateway", "Feign Client", "Circuit Breaker", "Angular 20",
             "TypeScript", "JWT", "Maven", "REST API",
         ],
         link: "https://github.com/wwadde/simulacion-credito-bancario",
@@ -53,6 +53,28 @@ const projects = [
             "/assets/projects/banco/servicios.webp"
         ],
     },
+    {
+        title: {
+            es: "Sistema de Gestión de Rutas de Transporte",
+            en: "Transportation Route Management System",
+        },
+        description: {
+            es: "Sistema backend REST API para gestionar flotas de vehículos, conductores y rutas de transporte con geocodificación automática de paradas usando Google Maps API. Incluye validación automática de licencias y documentos vehiculares, carga masiva de rutas desde Excel y tareas programadas para mantener la integridad de datos.",
+
+            en: "REST API backend system for managing vehicle fleets, drivers, and transportation routes with automatic geocoding of stops using Google Maps API. Features automated license and vehicle document validation, bulk route loading from Excel, and scheduled tasks to maintain data integrity.",
+        },
+        technologies: [
+            "Java", "Spring Boot", "PostgreSQL", "Google Maps API",
+            "Apache POI", "JWT", "Spring Security", "Spring Scheduler",
+            "JPA/Hibernate", "Stored Procedures", "REST API", "Maven"
+        ],
+        link: "https://github.com/wwadde/trayectos",
+        images: [
+            "/assets/projects/trayecto/mapa.webp",
+            "/assets/projects/trayecto/swagger.webp",
+            "/assets/projects/trayecto/procedimientos-almacenados.webp"
+        ],
+    }
 ];
 
 export function displayProjects() {
@@ -73,7 +95,7 @@ export function displayProjects() {
         if (project.images && project.images.length > 0) {
             const hasMultiple = project.images.length > 1;
             const carouselId = `carousel-${projectIndex}`;
-            
+
             imageSection = `
                 <div class="relative h-48 group" data-carousel="${carouselId}" data-project-index="${projectIndex}">
                     ${project.images.map((img, idx) => `
@@ -197,7 +219,7 @@ function initCarousels() {
             updateCarousel(state);
         });
     });
-    
+
     return carousels;
 }
 
