@@ -1,0 +1,37 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Acerca de",
+    "projects": "Proyectos",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "title": "Hola, soy <span class=\"gradient-text\">William Wadde</span>",
+    "subtitle": "Desarrollador backend Java/Typescript",
+    "description": "Convierto problemas en soluciones",
+    "cta_projects": "Mis proyectos",
+    "cta_contact": "Ponerse en contacto"
+  },
+  "about": {
+    "title": "Acerca de mi",
+    "description": "Soy desarrollador backend especializado en Java y Spring Boot, con experiencia en la construcción de microservicios seguros, la integración de servicios externos y la implementación de patrones de diseño. Aunque mi fuerte es el backend, también desarrollo interfaces atractivas con React y comprendo a fondo el trabajo en el frontend. Mi enfoque es crear soluciones sólidas, escalables y fáciles de mantener.",
+    "skills_title": "Tecnologías que manejo",
+    "skill_db": "Bases de datos relacionales"
+  },
+  "projects": {
+    "title": "Mis proyectos",
+    "view": "Ver proyecto",
+    "technologies": "Tecnologías:"
+  },
+  "contact": {
+    "title": "Contacto",
+    "heading": "Trabajemos juntos",
+    "description": "Estoy interesado en nuevas oportunidades y construir proyectos",
+    "ph_name": "Tu nombre",
+    "ph_email": "Tu Email",
+    "ph_message": "Tu mensaje",
+    "submit": "Enviar mensaje",
+    "success": "¡Gracias por tu mensaje! Te responderé pronto.",
+    "error": "Por favor completa todos los campos."
+  }
+}

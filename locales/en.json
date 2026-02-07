@@ -1,0 +1,37 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Hi, I'm <span class=\"gradient-text\">William Wadde</span>",
+    "subtitle": "Backend Developer Java/Typescript",
+    "description": "I turn problems into solutions",
+    "cta_projects": "My projects",
+    "cta_contact": "Get in touch"
+  },
+  "about": {
+    "title": "About me",
+    "description": "I'm a backend developer specialized in Java and Spring Boot, with experience building secure microservices, integrating external services, and implementing design patterns. Although my strength is backend, I also build attractive interfaces with React and have a deep understanding of frontend work. My focus is creating solid, scalable, and maintainable solutions.",
+    "skills_title": "Technologies I work with",
+    "skill_db": "Relational databases"
+  },
+  "projects": {
+    "title": "My projects",
+    "view": "View project",
+    "technologies": "Technologies:"
+  },
+  "contact": {
+    "title": "Contact",
+    "heading": "Let's work together",
+    "description": "I'm interested in new opportunities and building projects",
+    "ph_name": "Your name",
+    "ph_email": "Your Email",
+    "ph_message": "Your message",
+    "submit": "Send message",
+    "success": "Thank you for your message! I'll get back to you soon.",
+    "error": "Please fill in all fields."
+  }
+}

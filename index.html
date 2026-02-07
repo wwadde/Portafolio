@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -8,88 +8,85 @@
     <link rel="stylesheet" href="/main.css">
 </head>
 
-<body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <h2>Portafolio</h2>
+<body class="bg-white">
+    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-brand z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8 py-4 flex justify-between items-center">
+            <div>
+                <h2 class="gradient-text text-xl sm:text-2xl font-bold">Portafolio</h2>
             </div>
-            <ul class="nav-menu">
-                <li><a href="#home" class="nav-link active">Inicio</a></li>
-                <li><a href="#about" class="nav-link">Acerca de</a></li>
-                <li><a href="#projects" class="nav-link">Proyectos</a></li>
-                <li><a href="#contact" class="nav-link">Contacto</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+
+            <div class="flex items-center gap-3 sm:gap-6">
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link active no-underline text-gray-800 font-medium transition-colors duration-300 hover:text-primary" data-i18n="nav.home">Inicio</a></li>
+                    <li><a href="#about" class="nav-link no-underline text-gray-800 font-medium transition-colors duration-300 hover:text-primary" data-i18n="nav.about">Acerca de</a></li>
+                    <li><a href="#projects" class="nav-link no-underline text-gray-800 font-medium transition-colors duration-300 hover:text-primary" data-i18n="nav.projects">Proyectos</a></li>
+                    <li><a href="#contact" class="nav-link no-underline text-gray-800 font-medium transition-colors duration-300 hover:text-primary" data-i18n="nav.contact">Contacto</a></li>
+                </ul>
+
+                <button id="lang-toggle" class="flex items-center gap-1.5 text-sm font-semibold border-2 border-primary text-primary rounded-full px-3 py-1 cursor-pointer select-none bg-transparent hover:bg-primary hover:text-white transition-all duration-300" title="Switch language">
+                    <i class="fas fa-globe"></i>
+                    <span id="lang-label">EN</span>
+                </button>
+
+                <div class="hamburger">
+                    <span class="block w-6 h-[3px] bg-primary my-[3px] transition-all duration-300"></span>
+                    <span class="block w-6 h-[3px] bg-primary my-[3px] transition-all duration-300"></span>
+                    <span class="block w-6 h-[3px] bg-primary my-[3px] transition-all duration-300"></span>
+                </div>
             </div>
         </div>
     </nav>
 
-    <section id="home" class="section active">
-        <div class="hero-container">
-            <div class="hero-content">
-                <h1 class="hero-title">Hola, soy <span class="highlight">William Wadde</span></h1>
-                <p class="hero-subtitle">Desarrollador backend Java/Typescript</p>
-                <p class="hero-description">Convierto problemas en soluciones</p>
-                <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary">Mis proyectos</a>
-                    <a href="#contact" class="btn btn-secondary">Ponerse en contacto</a>
+    <section id="home" class="section active min-h-screen pt-24 sm:pt-28 pb-12">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center min-h-[80vh] max-w-7xl mx-auto px-4 sm:px-8">
+            <div class="text-center lg:text-left order-2 lg:order-1">
+                <h1 class="text-3xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-4 animate-fade-in-up" data-i18n="hero.title">Hola, soy <span class="gradient-text">William Wadde</span></h1>
+                <p class="text-lg sm:text-xl lg:text-2xl text-gray-500 mb-4 animate-fade-in-up-d1" data-i18n="hero.subtitle">Desarrollador backend Java/Typescript</p>
+                <p class="text-base lg:text-lg text-gray-700 mb-8 leading-relaxed animate-fade-in-up-d2" data-i18n="hero.description">Convierto problemas en soluciones</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-in-up-d3">
+                    <a href="#projects" class="gradient-bg text-white font-semibold py-3 px-8 rounded-full shadow-brand hover:-translate-y-1 hover:shadow-brand-strong transition-all duration-300 text-center no-underline" data-i18n="hero.cta_projects">Mis proyectos</a>
+                    <a href="#contact" class="bg-transparent text-primary font-semibold py-3 px-8 rounded-full border-2 border-primary hover:bg-primary hover:text-white hover:-translate-y-1 transition-all duration-300 text-center no-underline" data-i18n="hero.cta_contact">Ponerse en contacto</a>
                 </div>
             </div>
-            <div class="hero-image">
-                <div class="floating-card">
-                    <i class="fas fa-code"></i>
+            <div class="flex justify-center items-center order-1 lg:order-2">
+                <div class="w-48 h-48 sm:w-64 sm:h-64 lg:w-72 lg:h-72 gradient-bg rounded-2xl flex justify-center items-center shadow-brand animate-float">
+                    <i class="fas fa-code text-white text-5xl sm:text-6xl lg:text-7xl"></i>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="about" class="section">
-        <div class="container">
-            <h2 class="section-title">Acerca de mi</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>Soy desarrollador backend especializado en Java y Spring Boot, con experiencia en la construcción
-                        de microservicios seguros, la integración de servicios externos y la implementación de patrones
-                        de diseño. Aunque mi fuerte es el backend, también desarrollo interfaces atractivas con React y
-                        comprendo a fondo el trabajo en el frontend. Mi enfoque es crear soluciones sólidas, escalables
-                        y fáciles de mantener.</p>
-                    <div class="skills">
-                        <h3>Tecnologías que manejo</h3>
-                        <div class="skills-grid">
-
-                            <div class="skill-item">
-                                <i class="fa-solid fa-power-off"></i>
-                                <span>SpringBoot</span>
-                            </div>
-
-                            <div class="skill-item">
-                                <i class="fa-brands fa-java"></i>
-                                <span>Java</span>
-                            </div>
-
-                            <div class="skill-item">
-                                <i class="fab fa-react"></i>
-                                <span>React</span>
-                            </div>
-
-                            <div class="skill-item">
-                                <i class="fa-solid fa-database"></i>
-                                <span>Bases de datos relacionales</span>
-                            </div>
-                            <div class="skill-item">
-                                <i class="fab fa-js"></i>
-                                <span>JavaScript/TypeScript</span>
-                            </div>
-                            <div class="skill-item">
-                                <i class="fab fa-git-alt"></i>
-                                <span>Git</span>
-                            </div>
-
-
+    <section id="about" class="section min-h-screen pt-24 sm:pt-28 pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8">
+            <h2 class="gradient-text text-center text-3xl sm:text-4xl lg:text-5xl mb-12 font-bold" data-i18n="about.title">Acerca de mi</h2>
+            <div class="max-w-3xl mx-auto text-center">
+                <p class="text-base sm:text-lg leading-relaxed mb-8 text-gray-700" data-i18n="about.description">Soy desarrollador backend especializado en Java y Spring Boot, con experiencia en la construcción de microservicios seguros, la integración de servicios externos y la implementación de patrones de diseño. Aunque mi fuerte es el backend, también desarrollo interfaces atractivas con React y comprendo a fondo el trabajo en el frontend. Mi enfoque es crear soluciones sólidas, escalables y fáciles de mantener.</p>
+                <div>
+                    <h3 class="text-primary text-xl font-semibold mb-6" data-i18n="about.skills_title">Tecnologías que manejo</h3>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 lg:gap-6 mt-6">
+                        <div class="flex flex-col items-center bg-white p-4 lg:p-6 rounded-2xl shadow-brand hover:-translate-y-2 hover:shadow-brand-hover transition-all duration-300 text-center">
+                            <i class="fa-solid fa-power-off text-primary text-3xl lg:text-4xl mb-3"></i>
+                            <span class="text-sm sm:text-base text-gray-800 font-medium">SpringBoot</span>
+                        </div>
+                        <div class="flex flex-col items-center bg-white p-4 lg:p-6 rounded-2xl shadow-brand hover:-translate-y-2 hover:shadow-brand-hover transition-all duration-300 text-center">
+                            <i class="fa-brands fa-java text-primary text-3xl lg:text-4xl mb-3"></i>
+                            <span class="text-sm sm:text-base text-gray-800 font-medium">Java</span>
+                        </div>
+                        <div class="flex flex-col items-center bg-white p-4 lg:p-6 rounded-2xl shadow-brand hover:-translate-y-2 hover:shadow-brand-hover transition-all duration-300 text-center">
+                            <i class="fa-brands fa-react text-primary text-3xl lg:text-4xl mb-3"></i>
+                            <span class="text-sm sm:text-base text-gray-800 font-medium">React</span>
+                        </div>
+                        <div class="flex flex-col items-center bg-white p-4 lg:p-6 rounded-2xl shadow-brand hover:-translate-y-2 hover:shadow-brand-hover transition-all duration-300 text-center">
+                            <i class="fa-solid fa-database text-primary text-3xl lg:text-4xl mb-3"></i>
+                            <span class="text-sm sm:text-base text-gray-800 font-medium" data-i18n="about.skill_db">Bases de datos relacionales</span>
+                        </div>
+                        <div class="flex flex-col items-center bg-white p-4 lg:p-6 rounded-2xl shadow-brand hover:-translate-y-2 hover:shadow-brand-hover transition-all duration-300 text-center">
+                            <i class="fa-brands fa-js text-primary text-3xl lg:text-4xl mb-3"></i>
+                            <span class="text-sm sm:text-base text-gray-800 font-medium">JavaScript/TypeScript</span>
+                        </div>
+                        <div class="flex flex-col items-center bg-white p-4 lg:p-6 rounded-2xl shadow-brand hover:-translate-y-2 hover:shadow-brand-hover transition-all duration-300 text-center">
+                            <i class="fa-brands fa-git-alt text-primary text-3xl lg:text-4xl mb-3"></i>
+                            <span class="text-sm sm:text-base text-gray-800 font-medium">Git</span>
                         </div>
                     </div>
                 </div>
@@ -97,49 +94,47 @@
         </div>
     </section>
 
-    <section id="projects" class="section">
-        <div class="container">
-            <h2 class="section-title">Mis projectos</h2>
-            <div id="projects-container" class="projects-grid">
-
+    <section id="projects" class="section min-h-screen pt-24 sm:pt-28 pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8">
+            <h2 class="gradient-text text-center text-3xl sm:text-4xl lg:text-5xl mb-12 font-bold" data-i18n="projects.title">Mis proyectos</h2>
+            <div id="projects-container" class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
             </div>
         </div>
     </section>
 
-    <section id="contact" class="section">
-        <div class="container">
-            <h2 class="section-title">Contacto</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h3>Trabajemos juntos</h3>
-                    <p>Estoy interesado en nuevas oportunidades y construir proyectos</p>
-                    <div class="contact-items">
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <span id="em-obf"></span>
-                        
+    <section id="contact" class="section min-h-screen pt-24 sm:pt-28 pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8">
+            <h2 class="gradient-text text-center text-3xl sm:text-4xl lg:text-5xl mb-12 font-bold" data-i18n="contact.title">Contacto</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16 max-w-4xl mx-auto">
+                <div>
+                    <h3 class="text-primary text-xl font-semibold mb-4" data-i18n="contact.heading">Trabajemos juntos</h3>
+                    <p class="mb-8 leading-relaxed text-gray-700" data-i18n="contact.description">Estoy interesado en nuevas oportunidades y construir proyectos</p>
+                    <div class="flex flex-col gap-4">
+                        <div class="flex items-center gap-4">
+                            <i class="fas fa-envelope text-primary text-lg w-5 text-center"></i>
+                            <span id="em-obf" class="text-gray-700"></span>
                         </div>
-                        <div class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <span id="ph-obf"></span>
+                        <div class="flex items-center gap-4">
+                            <i class="fas fa-phone text-primary text-lg w-5 text-center"></i>
+                            <span id="ph-obf" class="text-gray-700"></span>
                         </div>
-                        <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Colombia-Ibague</span>
+                        <div class="flex items-center gap-4">
+                            <i class="fas fa-map-marker-alt text-primary text-lg w-5 text-center"></i>
+                            <span class="text-gray-700">Colombia-Ibague</span>
                         </div>
                     </div>
                 </div>
-                <form class="contact-form" id="contact-form">
-                    <div class="form-group">
-                        <input type="text" id="name" name="name" placeholder="Tu nombre" required>
+                <form class="bg-white p-6 sm:p-8 rounded-2xl shadow-brand" id="contact-form">
+                    <div class="mb-5">
+                        <input type="text" id="name" name="name" class="form-input w-full p-3 border-2 border-gray-200 rounded-lg text-base transition-all duration-300" data-i18n-placeholder="contact.ph_name" placeholder="Tu nombre" required>
                     </div>
-                    <div class="form-group">
-                        <input type="email" id="email" name="email" placeholder="Tu Email" required>
+                    <div class="mb-5">
+                        <input type="email" id="email" name="email" class="form-input w-full p-3 border-2 border-gray-200 rounded-lg text-base transition-all duration-300" data-i18n-placeholder="contact.ph_email" placeholder="Tu Email" required>
                     </div>
-                    <div class="form-group">
-                        <textarea id="message" name="message" placeholder="Tu mensaje" rows="5" required></textarea>
+                    <div class="mb-5">
+                        <textarea id="message" name="message" class="form-input w-full p-3 border-2 border-gray-200 rounded-lg text-base transition-all duration-300" data-i18n-placeholder="contact.ph_message" placeholder="Tu mensaje" rows="5" required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+                    <button type="submit" class="gradient-bg text-white font-semibold py-3 px-8 rounded-full shadow-brand hover:-translate-y-1 hover:shadow-brand-strong transition-all duration-300 cursor-pointer border-none" data-i18n="contact.submit">Enviar mensaje</button>
                 </form>
             </div>
         </div>
