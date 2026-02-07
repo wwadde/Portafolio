@@ -66,18 +66,23 @@ export function displayProjects() {
                              alt="${title} - imagen ${idx + 1}" 
                              class="project-img absolute inset-0 transition-opacity duration-500 ${idx === 0 ? 'opacity-100' : 'opacity-0'}" 
                              data-slide="${idx}"
-                             loading="lazy">
+                             loading="lazy"
+                             decoding="async">
                     `).join('')}
                     
                     ${hasMultiple ? `
                         <!-- Botones de navegación -->
                         <button class="carousel-btn carousel-prev absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white w-8 h-8 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"
                                 data-carousel-target="${carouselId}" data-action="prev" title="Anterior">
-                            <i class="fas fa-chevron-left text-sm"></i>
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
                         </button>
                         <button class="carousel-btn carousel-next absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white w-8 h-8 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"
                                 data-carousel-target="${carouselId}" data-action="next" title="Siguiente">
-                            <i class="fas fa-chevron-right text-sm"></i>
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                            </svg>
                         </button>
                         
                         <!-- Indicadores -->
@@ -94,7 +99,9 @@ export function displayProjects() {
         } else {
             imageSection = `
                 <div class="h-48 gradient-bg flex justify-center items-center">
-                    <i class="fas fa-code text-white text-5xl"></i>
+                    <svg class="w-16 h-16 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                    </svg>
                 </div>
             `;
         }

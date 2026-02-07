@@ -15,7 +15,6 @@
     "vite": "^7.3.1"
   },
   "dependencies": {
-    "@emailjs/browser": "^4.4.1",
-    "@fortawesome/fontawesome-free": "^7.1.0"
+    "@emailjs/browser": "^4.4.1"
   }
 }

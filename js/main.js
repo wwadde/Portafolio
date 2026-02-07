@@ -1,4 +1,4 @@
-import '@fortawesome/fontawesome-free/css/all.css';
+// Iconos optimizados - Sin dependencias externas
 import { displayProjects } from './projects.js';
 import { toggleLang, applyTranslations, t, getLang } from './i18n.js';
 import emailjs from '@emailjs/browser';
@@ -10,8 +10,10 @@ document.addEventListener('DOMContentLoaded', function () {
     const navMenu = document.querySelector('.nav-menu');
     const langToggle = document.getElementById('lang-toggle');
 
-    // Inicializar EmailJS con variable de entorno
-    emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
+    
+
+    // Diferir la inicialización de EmailJS hasta que sea necesario
+    let emailJSInitialized = false;
 
     function showSection(targetId) {
         sections.forEach(section => section.classList.remove('active'));
@@ -35,6 +37,10 @@ document.addEventListener('DOMContentLoaded', function () {
             showSection(targetId);
 
             if (targetId === '#contact') displayContactInfo();
+            if (targetId === '#cv') {
+                // Cargar CV solo cuando se navega a la sección
+                setTimeout(() => updateCV(), 100);
+            }
 
             navMenu.classList.remove('active');
             hamburger.classList.remove('active');
@@ -48,6 +54,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 const targetId = this.getAttribute('href');
                 showSection(targetId);
                 if (targetId === '#contact') displayContactInfo();
+                if (targetId === '#cv') {
+                    setTimeout(() => updateCV(), 100);
+                }
             });
         }
     });
@@ -68,6 +77,12 @@ document.addEventListener('DOMContentLoaded', function () {
     if (contactForm) {
         contactForm.addEventListener('submit', function (e) {
             e.preventDefault();
+
+            // Inicializar EmailJS solo cuando se necesite
+            if (!emailJSInitialized) {
+                emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
+                emailJSInitialized = true;
+            }
 
             const submitBtn = this.querySelector('button[type="submit"]');
             const originalText = submitBtn.textContent;

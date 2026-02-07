@@ -26,6 +26,13 @@
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/assets/icons/favicon.ico">
     
+    <!-- Preload critical resources -->
+    <link rel="preload" href="/js/main.js" as="script">
+    <link rel="preload" href="/main.css" as="style">
+    
+    <!-- DNS prefetch for external resources -->
+    <link rel="dns-prefetch" href="//api.emailjs.com">
+    
     <title>William Wadde - Portafolio</title>
     <link rel="stylesheet" href="/main.css">
 </head>
@@ -47,7 +54,9 @@
                 </ul>
 
                 <button id="lang-toggle" class="flex items-center gap-1.5 text-sm font-semibold border-2 border-primary text-primary rounded-full px-3 py-1 cursor-pointer select-none bg-transparent hover:bg-primary hover:text-white transition-all duration-300" title="Switch language">
-                    <i class="fas fa-globe"></i>
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM4.332 8.027a6.012 6.012 0 011.912-2.706C6.512 5.73 6.974 6 7.5 6A1.5 1.5 0 019 7.5V8a2 2 0 004 0 2 2 0 011.523-1.943A5.977 5.977 0 0116 10c0 .34-.028.675-.083 1H15a2 2 0 00-2 2v2.197A5.973 5.973 0 0110 16v-2a2 2 0 00-2-2 2 2 0 01-2-2 2 2 0 00-1.668-1.973z" clip-rule="evenodd"></path>
+                    </svg>
                     <span id="lang-label">EN</span>
                 </button>
 
@@ -73,7 +82,9 @@
             </div>
             <div class="flex justify-center items-center order-1 lg:order-2">
                 <div class="w-48 h-48 sm:w-64 sm:h-64 lg:w-72 lg:h-72 gradient-bg rounded-2xl flex justify-center items-center shadow-brand animate-float">
-                    <i class="fas fa-code text-white text-5xl sm:text-6xl lg:text-7xl"></i>
+                    <svg class="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                    </svg>
                 </div>
             </div>
         </div>
@@ -88,27 +99,33 @@
                     <h3 class="text-primary text-xl font-semibold mb-6" data-i18n="about.skills_title">Tecnologías que manejo</h3>
                     <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 lg:gap-6 mt-6">
                         <div class="flex flex-col items-center bg-white p-4 lg:p-6 rounded-2xl shadow-brand hover:-translate-y-2 hover:shadow-brand-hover transition-all duration-300 text-center">
-                            <i class="fa-solid fa-power-off text-primary text-3xl lg:text-4xl mb-3"></i>
+                            <svg class="w-8 h-8 lg:w-10 lg:h-10 text-primary mb-3" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M21.8537 0.734375C22.2574 0.734375 22.5843 1.06125 22.5843 1.46494V22.1562C22.5843 22.5599 22.2574 22.8868 21.8537 22.8868H2.16228C1.75859 22.8868 1.43171 22.5599 1.43171 22.1562V1.46494C1.43171 1.06125 1.75859 0.734375 2.16228 0.734375H21.8537ZM19.3718 4.21631H4.64368V19.4049H19.3718V4.21631ZM17.1468 13.4299C17.1468 15.1949 15.7187 16.6231 13.9537 16.6231C12.1887 16.6231 10.7606 15.1949 10.7606 13.4299C10.7606 11.6649 12.1887 10.2368 13.9537 10.2368C15.7187 10.2368 17.1468 11.6649 17.1468 13.4299ZM12.008 7.61182C12.008 8.41025 11.3593 9.05893 10.5609 9.05893C9.76245 9.05893 9.11377 8.41025 9.11377 7.61182C9.11377 6.81338 9.76245 6.16471 10.5609 6.16471C11.3593 6.16471 12.008 6.81338 12.008 7.61182Z"/>
+                            </svg>
                             <span class="text-sm sm:text-base text-gray-800 font-medium">SpringBoot</span>
                         </div>
                         <div class="flex flex-col items-center bg-white p-4 lg:p-6 rounded-2xl shadow-brand hover:-translate-y-2 hover:shadow-brand-hover transition-all duration-300 text-center">
-                            <i class="fa-brands fa-java text-primary text-3xl lg:text-4xl mb-3"></i>
+                            <svg class="w-8 h-8 lg:w-10 lg:h-10 text-primary mb-3" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M8.851 18.56s-.917.534.653.714c1.902.218 2.874.187 4.969-.211 0 0 .552.346 1.321.646-4.699 2.013-10.633-.118-6.943-1.149M8.276 15.933s-1.028.761.542.924c2.032.209 3.636.227 6.413-.308 0 0 .384.389.987.602-5.679 1.661-12.007.13-7.942-1.218M13.116 11.475c1.158 1.333-.304 2.533-.304 2.533s2.939-1.518 1.589-3.418c-1.261-1.772-2.228-2.652 3.007-5.688 0-.001-8.216 2.051-4.292 6.573M19.33 20.504s.679.559-.747.991c-2.712.822-11.288 1.069-13.669.033-.856-.373.75-.89 1.254-.998.527-.114.828-.093.828-.093-.953-.671-6.156 1.317-2.643 1.887 9.58 1.553 17.462-.7 14.977-1.82M9.292 13.21s-4.362 1.036-1.544 1.412c1.189.159 3.561.123 5.77-.062 1.806-.152 3.618-.477 3.618-.477s-.637.272-1.098.587c-4.429 1.165-12.986.623-10.522-.568 2.082-1.006 3.776-.892 3.776-.892M17.116 17.584c4.503-2.34 2.421-4.589.968-4.285-.355.074-.515.138-.515.138s.132-.207.385-.297c2.875-1.011 5.086 2.981-.928 4.562 0-.001.07-.062.09-.118M14.401 0s2.494 2.494-2.365 6.33c-3.896 3.077-.888 4.832-.001 6.836-2.274-2.053-3.943-3.858-2.824-5.539 1.644-2.469 6.197-3.665 5.19-7.627M9.734 23.924c4.322.277 10.959-.153 11.116-2.198 0 0-.302.775-3.572 1.391-3.688.694-8.239.613-10.937.168 0-.001.553.457 3.393.639"/>
+                            </svg>
                             <span class="text-sm sm:text-base text-gray-800 font-medium">Java</span>
                         </div>
                         <div class="flex flex-col items-center bg-white p-4 lg:p-6 rounded-2xl shadow-brand hover:-translate-y-2 hover:shadow-brand-hover transition-all duration-300 text-center">
-                            <i class="fa-brands fa-react text-primary text-3xl lg:text-4xl mb-3"></i>
-                            <span class="text-sm sm:text-base text-gray-800 font-medium">React</span>
-                        </div>
-                        <div class="flex flex-col items-center bg-white p-4 lg:p-6 rounded-2xl shadow-brand hover:-translate-y-2 hover:shadow-brand-hover transition-all duration-300 text-center">
-                            <i class="fa-solid fa-database text-primary text-3xl lg:text-4xl mb-3"></i>
+                            <svg class="w-8 h-8 lg:w-10 lg:h-10 text-primary mb-3" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 1.5C5.925 1.5 1 4.462 1 8.167v7.666C1 19.538 5.925 22.5 12 22.5s11-2.962 11-6.667V8.167C23 4.462 18.075 1.5 12 1.5zM12 4.5c4.963 0 8 2.175 8 3.667S16.963 11.833 12 11.833s-8-2.175-8-3.666S7.037 4.5 12 4.5zM4 12.167c1.338 1.5 5.663 2.5 8 2.5s6.663-1 8-2.5v3.666c0 1.492-3.037 3.667-8 3.667s-8-2.175-8-3.667v-3.666zm16 3.666c0 1.492-3.037 3.667-8 3.667s-8-2.175-8-3.667v-3.666c1.338 1.5 5.663 2.5 8 2.5s6.663-1 8-2.5v3.666z"/>
+                            </svg>
                             <span class="text-sm sm:text-base text-gray-800 font-medium" data-i18n="about.skill_db">Bases de datos relacionales</span>
                         </div>
                         <div class="flex flex-col items-center bg-white p-4 lg:p-6 rounded-2xl shadow-brand hover:-translate-y-2 hover:shadow-brand-hover transition-all duration-300 text-center">
-                            <i class="fa-brands fa-js text-primary text-3xl lg:text-4xl mb-3"></i>
+                            <svg class="w-8 h-8 lg:w-10 lg:h-10 text-primary mb-3" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M0 0h24v24H0V0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-1.797-1.14-.091-.33-.105-.51-.046-.705.15-.646.915-.84 1.515-.66.39.12.75.42.976.9 1.034-.676 1.034-.676 1.755-1.125-.27-.42-.404-.601-.586-.78-.63-.705-1.469-1.065-2.834-1.034l-.705.089c-.676.165-1.32.525-1.71 1.005-1.14 1.291-.811 3.541.569 4.471 1.365 1.02 3.361 1.244 3.616 2.205.24 1.17-.87 1.545-1.966 1.41-.811-.18-1.26-.586-1.755-1.336l-1.83 1.051c.21.48.45.689.81 1.109 1.74 1.756 6.09 1.666 6.871-1.004.029-.09.24-.705.074-1.65l.046.067zm-8.983-7.245h-2.248c0 1.938-.009 3.864-.009 5.805 0 1.232.063 2.363-.138 2.711-.33.689-1.18.601-1.566.48-.396-.196-.597-.466-.83-.855-.063-.105-.11-.196-.127-.196l-1.825 1.125c.305.63.75 1.172 1.324 1.517.855.51 2.004.675 3.207.405.783-.226 1.458-.691 1.811-1.411.51-.93.402-2.07.397-3.346.012-2.054 0-4.109 0-6.179l.004-.056z"/>
+                            </svg>
                             <span class="text-sm sm:text-base text-gray-800 font-medium">JavaScript/TypeScript</span>
                         </div>
                         <div class="flex flex-col items-center bg-white p-4 lg:p-6 rounded-2xl shadow-brand hover:-translate-y-2 hover:shadow-brand-hover transition-all duration-300 text-center">
-                            <i class="fa-brands fa-git-alt text-primary text-3xl lg:text-4xl mb-3"></i>
+                            <svg class="w-8 h-8 lg:w-10 lg:h-10 text-primary mb-3" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M23.546 10.93L13.067.452c-.604-.603-1.582-.603-2.188 0L8.708 2.627l2.76 2.76c.645-.215 1.379-.07 1.889.441.516.515.658 1.258.438 1.9l2.658 2.66c.645-.223 1.387-.078 1.9.435.721.72.721 1.884 0 2.604-.719.719-1.881.719-2.6 0-.539-.541-.674-1.337-.404-1.996L12.86 8.955v6.525c.176.086.342.203.488.348.713.721.713 1.883 0 2.6-.719.721-1.889.721-2.609 0-.719-.719-.719-1.879 0-2.598.182-.18.387-.316.605-.406V8.835c-.217-.091-.424-.222-.6-.401-.545-.533-.676-1.332-.396-1.991L8.144 4.249l-7.69 7.689c-.604.604-.604 1.582 0 2.188l10.48 10.477c.604.604 1.582.604 2.186 0l10.426-10.426c.603-.602.603-1.582 0-2.187"/>
+                            </svg>
                             <span class="text-sm sm:text-base text-gray-800 font-medium">Git</span>
                         </div>
                     </div>
@@ -131,12 +148,14 @@
             <p class="text-center text-gray-600 mb-8 text-sm sm:text-base" data-i18n="cv.description">Puedes descargar mi CV o verlo a continuación</p>
             <div class="flex justify-center mb-6">
                 <a id="cv-download" href="/assets/CV_William Wadde_es.pdf" download class="gradient-bg text-white font-semibold py-3 px-6 rounded-full shadow-brand hover:-translate-y-1 hover:shadow-brand-strong transition-all duration-300 text-center no-underline flex items-center gap-2">
-                    <i class="fas fa-download"></i>
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                    </svg>
                     <span data-i18n="cv.download">Descargar CV</span>
                 </a>
             </div>
             <div class="max-w-5xl mx-auto bg-white rounded-2xl shadow-brand overflow-hidden" style="height: 70vh;">
-                <object id="cv-viewer" data="/assets/CV_William Wadde_es.pdf" type="application/pdf" class="w-full h-full border-0">
+                <object id="cv-viewer" data="" type="application/pdf" class="w-full h-full border-0">
                     <p class="p-8 text-center text-gray-600">
                         <span data-i18n="cv.view_message">No se puede mostrar el PDF. </span>
                         <a href="/assets/CV_William Wadde_es.pdf" download class="text-primary font-semibold hover:underline" data-i18n="cv.download_alternative">Descargar aquí</a>
@@ -155,15 +174,22 @@
                     <p class="mb-8 leading-relaxed text-gray-700" data-i18n="contact.description">Estoy interesado en nuevas oportunidades y construir proyectos</p>
                     <div class="flex flex-col gap-4">
                         <div class="flex items-center gap-4">
-                            <i class="fas fa-envelope text-primary text-lg w-5 text-center"></i>
+                            <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                            </svg>
                             <span id="em-obf" class="text-gray-700"></span>
                         </div>
                         <div class="flex items-center gap-4">
-                            <i class="fas fa-phone text-primary text-lg w-5 text-center"></i>
+                            <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+                            </svg>
                             <span id="ph-obf" class="text-gray-700"></span>
                         </div>
                         <div class="flex items-center gap-4">
-                            <i class="fas fa-map-marker-alt text-primary text-lg w-5 text-center"></i>
+                            <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+                            </svg>
                             <span class="text-gray-700">Colombia-Ibague</span>
                         </div>
                     </div>
