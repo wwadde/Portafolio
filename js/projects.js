@@ -95,7 +95,7 @@ export function displayProjects() {
                         </button>
                         
                         <!-- Indicadores -->
-                        <div class="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
+                        <div class="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5 z-10 bg-black/40 px-4 py-2 rounded-full backdrop-blur-sm">
                             ${project.images.map((_, idx) => `
                                 <button class="carousel-indicator w-2 h-2 rounded-full transition-all duration-300 ${idx === 0 ? 'bg-white w-6' : 'bg-white/50'}"
                                         data-carousel-target="${carouselId}" 

@@ -282,6 +282,10 @@ body {
   display: flex;
   gap: 12px;
   z-index: 10001;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 8px 16px;
+  border-radius: 20px;
+  backdrop-filter: blur(4px);
 }
 
 .modal-indicator {
