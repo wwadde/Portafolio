@@ -53,7 +53,7 @@ export function applyTranslations() {
 
     const langLabel = document.getElementById("lang-label");
     if (langLabel) {
-        langLabel.textContent = currentLang === "es" ? "EN" : "ES";
+        langLabel.textContent = currentLang === "es" ? "ES" : "EN";
     }
 
     document.documentElement.lang = currentLang;
