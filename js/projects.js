@@ -2,49 +2,55 @@ import { t, getLang } from './i18n.js';
 import { initImageModal } from './imageModal.js';
 
 const projects = [
-    {
+        {
+            title: {
+                es: "Cobranza",
+                en: "Collections Management",
+            },
+            description: {
+            es: "Plataforma web <strong>en producción</strong> para gestionar préstamos y cobranzas con roles diferenciados (Administrador/Cobrador). Incluye generación automática de recibos PDF, dashboards con estadísticas en tiempo real, control de morosos, reestructuración de créditos y sistema completo de reportería profesional. <a href='https://www.linkedin.com/feed/update/urn:li:activity:7399551069430751234/' target='_blank' rel='noopener noreferrer' class='text-blue-600 hover:text-blue-800 underline hover:no-underline font-medium'>Ver post en LinkedIn</a>",
+            en: "Web platform <strong>in production</strong> for managing loans and collections with differentiated roles (Admin/Collector). Features automatic PDF receipt generation, real-time statistics dashboards, delinquency control, credit restructuring, and comprehensive professional reporting system. <a href='https://www.linkedin.com/feed/update/urn:li:activity:7399551069430751234/' target='_blank' rel='noopener noreferrer' class='text-blue-600 hover:text-blue-800 underline hover:no-underline font-medium'>View LinkedIn Post</a>",
+        },
+            technologies: [
+                "Java", "Springboot", "PostgreSQL", "Docker", "JavaScript",
+                "TailwindCSS", "JasperReports", "Prometheus", "Grafana", "JTE",
+                "JUnit", "Mockito",
+            ],
+            link: "https://cobranza.work",
+            images: [
+                "/assets/projects/cobranza/cobrador.webp",
+                "/assets/projects/cobranza/credito-detalle.webp",
+                "/assets/projects/cobranza/creditos-generales.webp",
+                "/assets/projects/cobranza/estadisticas-cobradores.webp",
+                "/assets/projects/cobranza/estadisticas-generales.webp",
+                "/assets/projects/cobranza/inicio-admin.webp",
+                "/assets/projects/cobranza/login.webp",
+                "/assets/projects/cobranza/morosos.webp",
+                "/assets/projects/cobranza/recibo.webp",
+                "/assets/projects/cobranza/estructura-proyecto.webp"
+            ],
+        },
+        {
         title: {
-            es: "Simulación crédito bancario",
-            en: "Bank Credit Simulation",
+            es: "Sistema Bancario de Créditos",
+            en: "Banking Credit System",
         },
         description: {
-            es: "Aplicación web en microservicios con descubrimiento de servicios, autenticación y autorización, y frontend en Angular.",
-            en: "Microservices web application with service discovery, authentication & authorization, and Angular frontend.",
-        },
-        technologies: ["Java", "Springboot", "PostgreSQL", "Angular", "Docker"],
-        link: "https://github.com/wwadde/simulacion-credito-bancario",
-        images: [
-            "/assets/projects/credito-bancario-1.svg",
-            "/assets/projects/credito-bancario-2.svg",
-            "/assets/projects/credito-bancario-3.svg",
-        ],
-    },
-    {
-        title: {
-            es: "Cobranza",
-            en: "Collections Management",
-        },
-        description: {
-            es: "Aplicación web para gestionar préstamos con roles de administrador y cobrador, visualización de estadísticas, generación de reportes y monitoreo de métricas. <a href='https://www.linkedin.com/feed/update/urn:li:activity:7399551069430751234/' target='_blank' rel='noopener noreferrer' class='text-blue-600 hover:text-blue-800 underline hover:no-underline font-medium'>Ver post en LinkedIn</a>",
-            en: "Web application for managing loans with admin and collector roles, statistics visualization, report generation, and metrics monitoring. <a href='https://www.linkedin.com/feed/update/urn:li:activity:7399551069430751234/' target='_blank' rel='noopener noreferrer' class='text-blue-600 hover:text-blue-800 underline hover:no-underline font-medium'>See LinkedIn Post</a>",
+            es: "Sistema completo de gestión de créditos bancarios con arquitectura de microservicios, incluyendo autenticación JWT, API Gateway, descubrimiento dinámico de servicios con Eureka y balanceo de carga. Gestiona clientes, cuentas y créditos con seguridad empresarial y alta disponibilidad.",
+            en: "Complete banking credit management system with microservices architecture, featuring JWT authentication, API Gateway, dynamic service discovery with Eureka and load balancing. Manages clients, accounts and credits with enterprise-level security and high availability.",
         },
         technologies: [
-            "Java", "Springboot", "PostgreSQL", "Docker", "JavaScript",
-            "TailwindCSS", "JasperReports", "Prometheus", "Grafana", "JTE",
-            "JUnit", "Mockito",
+            "Java 21", "Spring Boot", "Spring Cloud", "Eureka", "OAuth2", 
+            "API Gateway", "Feign Client", "Circuit Breaker", "Angular 20", 
+            "TypeScript", "Angular Material", "JWT", "Maven", "REST API",
         ],
-        link: "https://cobranza.work",
+        link: "https://github.com/wwadde/simulacion-credito-bancario",
         images: [
-            "/assets/projects/cobranza/cobrador.webp",
-            "/assets/projects/cobranza/credito-detalle.webp",
-            "/assets/projects/cobranza/creditos-generales.webp",
-            "/assets/projects/cobranza/estadisticas-cobradores.webp",
-            "/assets/projects/cobranza/estadisticas-generales.webp",
-            "/assets/projects/cobranza/inicio-admin.webp",
-            "/assets/projects/cobranza/login.webp",
-            "/assets/projects/cobranza/morosos.webp",
-            "/assets/projects/cobranza/recibo.webp",
-            "/assets/projects/cobranza/estructura-proyecto.webp"
+            "/assets/projects/banco/eureka-discovery.webp",
+            "/assets/projects/banco/credito-service.webp",
+            "/assets/projects/banco/cuenta-service.webp",
+            "/assets/projects/banco/persona-service.webp",
+            "/assets/projects/banco/servicios.webp"
         ],
     },
 ];
@@ -127,10 +133,12 @@ export function displayProjects() {
                 <div class="flex flex-wrap gap-1.5 sm:gap-2 mb-4">
                     ${techBadges}
                 </div>
-                <a href="${project.link}" target="_blank" rel="noopener noreferrer"
-                   class="inline-block text-primary font-semibold border-2 border-primary px-4 py-2 rounded-lg no-underline hover:bg-primary hover:text-white transition-all duration-300 text-sm sm:text-base">
-                    ${t('projects.view')}
-                </a>
+                <div class="flex justify-center">
+                    <a href="${project.link}" target="_blank" rel="noopener noreferrer"
+                       class="inline-block text-primary font-semibold border-2 border-primary px-4 py-2 rounded-lg no-underline hover:bg-primary hover:text-white transition-all duration-300 text-sm sm:text-base">
+                        ${t('projects.view')}
+                    </a>
+                </div>
             </div>
         `;
 
