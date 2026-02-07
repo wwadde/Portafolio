@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const langToggle = document.getElementById('lang-toggle');
 
     // Inicializar EmailJS con variable de entorno
-    emailjs.init(import.meta.env.EMAILJS_PUBLIC_KEY);
+    emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
 
     function showSection(targetId) {
         sections.forEach(section => section.classList.remove('active'));
@@ -76,8 +76,8 @@ document.addEventListener('DOMContentLoaded', function () {
             submitBtn.disabled = true;
             submitBtn.textContent = t('contact.sending') || 'Enviando...';
             emailjs.sendForm(
-                import.meta.env.EMAILJS_SERVICE_ID,
-                import.meta.env.EMAILJS_TEMPLATE_ID,
+                import.meta.env.VITE_EMAILJS_SERVICE_ID,
+                import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
                 this
             )
                 .then(function(response) {
