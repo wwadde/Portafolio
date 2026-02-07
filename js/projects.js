@@ -40,9 +40,9 @@ const projects = [
             en: "Complete banking credit management system with microservices architecture, featuring JWT authentication, API Gateway, dynamic service discovery with Eureka and load balancing. Manages clients, accounts and credits with enterprise-level security and high availability.",
         },
         technologies: [
-            "Java 21", "Spring Boot", "Spring Cloud", "Eureka", "OAuth2", 
+            "Spring Boot", "Spring Cloud", "Eureka", "OAuth2", 
             "API Gateway", "Feign Client", "Circuit Breaker", "Angular 20", 
-            "TypeScript", "Angular Material", "JWT", "Maven", "REST API",
+            "TypeScript", "JWT", "Maven", "REST API",
         ],
         link: "https://github.com/wwadde/simulacion-credito-bancario",
         images: [

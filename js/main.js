@@ -149,6 +149,7 @@ function updateCV() {
     
     const cvViewer = document.getElementById('cv-viewer');
     const cvDownload = document.getElementById('cv-download');
+    const cvDownloadFallback = document.getElementById('cv-download-fallback');
     
     if (!cvViewer && !cvDownload) {
         console.warn('No se han encontrado los elementos para mostrar o descargar el CV.');
@@ -156,6 +157,7 @@ function updateCV() {
     }
     
     // Actualizar elementos de forma segura
-    cvViewer?.setAttribute('data', cvPath);
+    cvViewer?.setAttribute('src', cvPath);
     cvDownload?.setAttribute('href', cvPath);
+    cvDownloadFallback?.setAttribute('href', cvPath);
 }
