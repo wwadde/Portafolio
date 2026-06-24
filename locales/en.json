@@ -33,7 +33,10 @@
   "contact": {
     "title": "Contact",
     "heading": "Let's work together",
-    "description": "I'm interested in new opportunities and building projects",
+    "description": "Do you have a job opportunity, a proposal, or a project idea? Feel free to contact me directly through any of the following channels.",
+    "linkedin_description": "Connect with me",
+    "form_separator": "Or leave me a message and I'll get back to you as soon as possible",
+    "email_label": "Email",
     "ph_name": "Your name",
     "ph_email": "Your Email",
     "ph_message": "Your message",

@@ -33,7 +33,10 @@
   "contact": {
     "title": "Contacto",
     "heading": "Trabajemos juntos",
-    "description": "Estoy interesado en nuevas oportunidades y construir proyectos",
+    "description": "¿Tienes una oportunidad laboral, una propuesta o una idea para un proyecto? Puedes contactarme directamente por cualquiera de estos medios.",
+    "linkedin_description": "Conecta conmigo",
+    "form_separator": "O déjame un mensaje por aquí y te responderé lo antes posible",
+    "email_label": "Correo electrónico",
     "ph_name": "Tu nombre",
     "ph_email": "Tu Email",
     "ph_message": "Tu mensaje",

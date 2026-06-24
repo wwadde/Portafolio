@@ -86,8 +86,7 @@
     </nav>
 
     <section id="home" class="section active min-h-screen pt-24 sm:pt-28 pb-12">
-        <div
-            class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center min-h-[80vh] max-w-7xl mx-auto px-4 sm:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center min-h-[80vh] max-w-7xl mx-auto px-4 sm:px-8">
             <div class="text-center lg:text-left order-2 lg:order-1">
                 <h1 class="text-3xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-4 animate-fade-in-up"
                     data-i18n="hero.title">Hola, soy <span class="gradient-text">William Wadde</span></h1>
@@ -105,14 +104,8 @@
                 </div>
             </div>
             <div class="flex justify-center items-center order-1 lg:order-2">
-                <div
-                    class="w-48 h-48 sm:w-64 sm:h-64 lg:w-72 lg:h-72 gradient-bg rounded-2xl flex justify-center items-center shadow-brand animate-float">
-                    <svg class="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 text-white" fill="currentColor"
-                        viewBox="0 0 20 20">
-                        <path fill-rule="evenodd"
-                            d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z"
-                            clip-rule="evenodd"></path>
-                    </svg>
+                <div class="w-48 h-48 sm:w-64 sm:h-64 lg:w-72 lg:h-72 rounded-full overflow-hidden shadow-brand animate-float">
+                    <img src="/assets/foto.png" alt="Foto de perfil" class="w-full h-full object-cover">
                 </div>
             </div>
         </div>
@@ -245,60 +238,131 @@
     <section id="contact" class="section min-h-screen pt-24 sm:pt-28 pb-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-8">
             <h2 class="gradient-text text-center text-3xl sm:text-4xl lg:text-5xl mb-12 font-bold"
-                data-i18n="contact.title">Contacto</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16 max-w-4xl mx-auto">
+                data-i18n="contact.title">
+                Contacto
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16 max-w-5xl mx-auto">
+
+                <!-- Información de contacto -->
                 <div>
-                    <h3 class="text-primary text-xl font-semibold mb-4" data-i18n="contact.heading">Trabajemos juntos
+
+                    <!-- Titulo -->
+                    <h3 class="text-primary text-2xl font-semibold mb-3" data-i18n="contact.heading">
+
                     </h3>
-                    <p class="mb-8 leading-relaxed text-gray-700" data-i18n="contact.description">Estoy interesado en
-                        nuevas oportunidades y construir proyectos</p>
-                    <div class="flex flex-col gap-4">
-                        <div class="flex items-center gap-4">
-                            <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
-                                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
-                            </svg>
-                            <span id="em-obf" class="text-gray-700"></span>
+
+                    <!-- Descripcion -->
+                    <p class="mb-8 leading-relaxed text-gray-700" data-i18n="contact.description">
+
+                    </p>
+
+                    <!-- WhatsApp -->
+                    <div id="wa-obf" class="mb-4"></div>
+
+                    <!-- LinkedIn -->
+                    <a href="https://linkedin.com/in/williamwadde"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="flex items-center gap-4 p-4 rounded-2xl border border-gray-200 bg-white hover:border-primary hover:shadow-brand transition-all duration-300 mb-4">
+
+                        <img src="/assets/icons/linkedin.png"
+                            alt="LinkedIn"
+                            class="w-12 h-12">
+
+                        <div>
+                            <div class="font-semibold text-primary">
+                                LinkedIn
+                            </div>
+
+                            <div class="text-sm text-gray-500" data-i18n="contact.linkedin_description">
+                                Conecta conmigo
+                            </div>
                         </div>
-                        <div class="flex items-center gap-4">
-                            <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
-                                <path
-                                    d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z">
-                                </path>
-                            </svg>
-                            <span id="ph-obf" class="text-gray-700"></span>
-                        </div>
-                        <div class="flex items-center gap-4">
-                            <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd"
-                                    d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
-                                    clip-rule="evenodd"></path>
-                            </svg>
-                            <span class="text-gray-700">Colombia-Ibague</span>
-                        </div>
+                    </a>
+
+                    <!-- Email -->
+                    <div id="email-card-obf" class="mb-8"></div>
+
+                    <!-- Ubicación -->
+                    <div class="flex justify-center gap-3 text-gray-600">
+
+                        <svg class="w-5 h-5 text-primary"
+                            fill="currentColor"
+                            viewBox="0 0 20 20">
+
+                            <path fill-rule="evenodd"
+                                d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                                clip-rule="evenodd">
+                            </path>
+
+                        </svg>
+
+                        <span>Ibagué, Colombia</span>
                     </div>
+
+
                 </div>
-                <form class="bg-white p-6 sm:p-8 rounded-2xl shadow-brand" id="contact-form">
-                    <div class="mb-5">
-                        <input type="text" id="name" name="name"
-                            class="form-input w-full p-3 border-2 border-gray-200 rounded-lg text-base transition-all duration-300"
-                            data-i18n-placeholder="contact.ph_name" placeholder="Tu nombre" required>
+
+                
+
+                <!-- Formulario -->
+                <form class="bg-white p-6 sm:p-8 rounded-2xl shadow-brand"
+                    id="contact-form">
+
+                    <!-- Separador -->
+                    <div class="my-10 flex items-center gap-4">
+
+                        <div class="flex-1 h-px bg-gray-200"></div>
+
+                        <span class="text-sm font-medium text-gray-500" data-i18n="contact.form_separator">
+                            O déjame un mensaje por aquí y te responderé lo antes posible
+                        </span>
+
+                        <div class="flex-1 h-px bg-gray-200"></div>
+
                     </div>
+
                     <div class="mb-5">
-                        <input type="email" id="email" name="email"
+                        <input type="text"
+                            id="name"
+                            name="name"
                             class="form-input w-full p-3 border-2 border-gray-200 rounded-lg text-base transition-all duration-300"
-                            data-i18n-placeholder="contact.ph_email" placeholder="Tu Email" required>
+                            data-i18n-placeholder="contact.ph_name"
+                            placeholder="Tu nombre"
+                            required>
                     </div>
+
                     <div class="mb-5">
-                        <textarea id="message" name="message"
+                        <input type="email"
+                            id="email"
+                            name="email"
                             class="form-input w-full p-3 border-2 border-gray-200 rounded-lg text-base transition-all duration-300"
-                            data-i18n-placeholder="contact.ph_message" placeholder="Tu mensaje" rows="5"
-                            required></textarea>
+                            data-i18n-placeholder="contact.ph_email"
+                            placeholder="Tu Email"
+                            required>
                     </div>
+
+                    <div class="mb-5">
+                        <textarea id="message"
+                            name="message"
+                            rows="5"
+                            required
+                            class="form-input w-full p-3 border-2 border-gray-200 rounded-lg text-base transition-all duration-300"
+                            data-i18n-placeholder="contact.ph_message"
+                            placeholder="Tu mensaje"></textarea>
+                    </div>
+
                     <button type="submit"
                         class="gradient-bg text-white font-semibold py-3 px-8 rounded-full shadow-brand hover:-translate-y-1 hover:shadow-brand-strong transition-all duration-300 cursor-pointer border-none"
-                        data-i18n="contact.submit">Enviar mensaje</button>
+                        data-i18n="contact.submit">
+
+                        Enviar mensaje
+
+                    </button>
+
                 </form>
+
             </div>
         </div>
     </section>
