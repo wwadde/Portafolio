@@ -16,7 +16,7 @@
   },
   "about": {
     "title": "About me",
-    "description": "I'm a backend developer specialized in Java and Spring Boot, with experience building secure microservices, integrating external services, and implementing design patterns. Although my strength is backend, I also build attractive interfaces with React and have a deep understanding of frontend work. My focus is creating solid, scalable, and maintainable solutions.",
+    "description": "I'm a backend developer specialized in Java and Spring Boot, with experience building secure microservices, integrating external services, and implementing design patterns. Although my strength is backend, I also build attractive interfaces with Angular and have a deep understanding of frontend work. My focus is creating solid, scalable, and maintainable solutions.",
     "skills_title": "Technologies I work with",
     "skill_db": "Relational databases"
   },

@@ -16,9 +16,9 @@
   },
   "about": {
     "title": "Acerca de mi",
-    "description": "Soy desarrollador backend especializado en Java y Spring Boot, con experiencia en la construcción de microservicios seguros, la integración de servicios externos y la implementación de patrones de diseño. Aunque mi fuerte es el backend, también desarrollo interfaces atractivas con React y comprendo a fondo el trabajo en el frontend. Mi enfoque es crear soluciones sólidas, escalables y fáciles de mantener.",
+    "description": "Soy desarrollador backend especializado en Java y Spring Boot, con experiencia en la construcción de microservicios seguros, la integración de servicios externos y la implementación de patrones de diseño. Aunque mi fuerte es el backend, también desarrollo interfaces atractivas con Angular y comprendo a fondo el trabajo en el frontend. Mi enfoque es crear soluciones sólidas, escalables y fáciles de mantener.",
     "skills_title": "Tecnologías que manejo",
-    "skill_db": "Bases de datos relacionales"
+    "skill_db": "Base datos relacional"
   },
   "projects": {
     "title": "Mis proyectos",
