@@ -35,8 +35,8 @@ const projects = [
         es: "Plataforma de Reservas para Agencia de Viajes",
         en: "Travel Agency Booking Platform" },
         description: { 
-            es: "Plataforma web donde los usuarios pueden explorar paquetes turísticos, revisar fechas de salida, reservar viajes y completar pagos en línea. Incluye autenticación, gestión de perfil y seguimiento de reservas. Además, cuenta con un panel administrativo para gestionar todo el contenido de la agencia dinámicamente en tiempo real, centralizando toda la operación comercial de la agencia en una sola aplicación.",
-            en: "Web platform where users can browse travel packages, check departure dates, book trips, and complete online payments. It includes authentication, profile management, and reservation tracking. It also provides an admin panel to manage the entire content of the agency dynamically in real-time, centralizing the agency’s full commercial operation in a single application." },
+            es: "Plataforma web donde los usuarios pueden explorar paquetes turísticos, revisar fechas de salida, reservar viajes y completar pagos en línea. Incluye autenticación, gestión de perfil y seguimiento de reservas. Además, cuenta con un panel administrativo para gestionar todo el contenido de la agencia dinámicamente en tiempo real, centralizando toda la operación comercial de la agencia en una sola aplicación priorizando SEO. <a href='https://www.linkedin.com/feed/update/urn:li:activity:7455096544187543553/' target='_blank' rel='noopener noreferrer' class='text-blue-600 hover:text-blue-800 underline hover:no-underline font-medium'>Ver post en LinkedIn</a>",
+            en: "Web platform where users can browse travel packages, check departure dates, book trips, and complete online payments. It includes authentication, profile management, and reservation tracking. It also provides an admin panel to manage the entire content of the agency dynamically in real-time, centralizing the agency’s full commercial operation in a single application prioritizing SEO. <a href='https://www.linkedin.com/feed/update/urn:li:activity:7455096544187543553/' target='_blank' rel='noopener noreferrer' class='text-blue-600 hover:text-blue-800 underline hover:no-underline font-medium'>View LinkedIn Post</a>" },
         technologies: ["Angular 21", "TypeScript", "Tailwind CSS", "Signals", "REST APIs", "Role-based Authentication", "Online Payments (PayU)", "Nginx", "Docker", "GitHub Actions", "AWS EC2", "SpringBoot 4"],
         link: "https://agencia.williamwadde.work",
         images: [
@@ -46,8 +46,9 @@ const projects = [
             "/assets/projects/agencia/transaccion-aprobada.webp",
             "/assets/projects/agencia/paquete.webp",
             "/assets/projects/agencia/reservas.webp",
-            "/assets/projects/agencia/subida-imagenes.webp"
-        ]
+            "/assets/projects/agencia/subida-imagenes.webp",
+            "/assets/projects/agencia/foro.jfif"
+        ],
      },
     {
         title: {
