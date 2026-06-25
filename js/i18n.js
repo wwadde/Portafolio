@@ -6,7 +6,7 @@ const translations = {
     en: flattenObject(enTranslations),
 };
 
-let currentLang = "es";
+let currentLang = navigator.language?.startsWith('es') ? 'es' : 'en';
 
 function flattenObject(obj, prefix = '') {
     return Object.keys(obj).reduce((acc, key) => {
