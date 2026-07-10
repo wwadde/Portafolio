@@ -49,28 +49,39 @@ const projects = [
             "/assets/projects/agencia/subida-imagenes.webp",
             "/assets/projects/agencia/foro.jfif"
         ],
-     },
+    },
     {
         title: {
-            es: "Sistema Bancario de Créditos",
-            en: "Banking Credit System",
+            es: "Benchmark de Rendimiento: Spring MVC vs WebFlux",
+            en: "Performance Benchmark: Spring MVC vs WebFlux",
         },
         description: {
-            es: "Sistema completo de gestión de créditos bancarios con arquitectura de microservicios, incluyendo autenticación JWT, API Gateway, descubrimiento dinámico de servicios con Eureka y balanceo de carga. Gestiona clientes, cuentas y créditos con seguridad empresarial y alta disponibilidad.",
-            en: "Complete banking credit management system with microservices architecture, featuring JWT authentication, API Gateway, dynamic service discovery with Eureka and load balancing. Manages clients, accounts and credits with enterprise-level security and high availability.",
+            es: "Proyecto de benchmarking para comparar el rendimiento de <strong>Spring MVC (Tomcat)</strong> y <strong>Spring WebFlux (Netty)</strong> ejecutando los mismos endpoints REST sobre PostgreSQL. Incluye carga automatizada de datasets, documentación con Swagger, monitoreo en tiempo real con Prometheus y Grafana, y métricas para analizar latencia, concurrencia y consumo de recursos bajo diferentes estrategias de acceso a datos (JDBC y JPA).",
+
+            en: "Benchmarking project comparing the performance of <strong>Spring MVC (Tomcat)</strong> and <strong>Spring WebFlux (Netty)</strong> running identical REST endpoints against PostgreSQL. Features automated dataset loading, Swagger documentation, real-time monitoring with Prometheus and Grafana, and metrics to analyze latency, concurrency, and resource usage using different data access strategies (JDBC and JPA).",
         },
         technologies: [
-            "Spring Boot", "Spring Cloud", "Eureka", "OAuth2",
-            "API Gateway", "Feign Client", "Circuit Breaker", "Angular 20",
-            "TypeScript", "JWT", "Maven", "REST API",
+            "Java 25",
+            "Spring Boot",
+            "Spring MVC",
+            "Spring WebFlux",
+            "Tomcat",
+            "Netty",
+            "PostgreSQL",
+            "JDBC",
+            "JPA/Hibernate",
+            "Docker",
+            "Prometheus",
+            "Grafana",
+            "Swagger",
+            "Python"
         ],
-        link: "https://github.com/wwadde/simulacion-credito-bancario",
+        link: "https://github.com/wwadde/rendimiento-springboot-mvc-reactivo",
         images: [
-            "/assets/projects/banco/eureka-discovery.webp",
-            "/assets/projects/banco/credito-service.webp",
-            "/assets/projects/banco/cuenta-service.webp",
-            "/assets/projects/banco/persona-service.webp",
-            "/assets/projects/banco/servicios.webp"
+            "/assets/projects/rendimiento/cpu.webp",
+            "/assets/projects/rendimiento/db.webp",
+            "/assets/projects/rendimiento/console.webp",
+            "/assets/projects/rendimiento/http.webp"
         ],
     },
     {
@@ -93,6 +104,29 @@ const projects = [
             "/assets/projects/trayecto/mapa.webp",
             "/assets/projects/trayecto/swagger.webp",
             "/assets/projects/trayecto/procedimientos-almacenados.webp"
+        ],
+    },
+    {
+        title: {
+            es: "Sistema Bancario de Créditos",
+            en: "Banking Credit System",
+        },
+        description: {
+            es: "Sistema completo de gestión de créditos bancarios con arquitectura de microservicios, incluyendo autenticación JWT, API Gateway, descubrimiento dinámico de servicios con Eureka y balanceo de carga. Gestiona clientes, cuentas y créditos con seguridad empresarial y alta disponibilidad.",
+            en: "Complete banking credit management system with microservices architecture, featuring JWT authentication, API Gateway, dynamic service discovery with Eureka and load balancing. Manages clients, accounts and credits with enterprise-level security and high availability.",
+        },
+        technologies: [
+            "Spring Boot", "Spring Cloud", "Eureka", "OAuth2",
+            "API Gateway", "Feign Client", "Circuit Breaker", "Angular 20",
+            "TypeScript", "JWT", "Maven", "REST API",
+        ],
+        link: "https://github.com/wwadde/simulacion-credito-bancario",
+        images: [
+            "/assets/projects/banco/eureka-discovery.webp",
+            "/assets/projects/banco/credito-service.webp",
+            "/assets/projects/banco/cuenta-service.webp",
+            "/assets/projects/banco/persona-service.webp",
+            "/assets/projects/banco/servicios.webp"
         ],
     }
 ];
