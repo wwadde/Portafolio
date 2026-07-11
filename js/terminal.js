@@ -10,12 +10,6 @@ const banner = `
                                                    
  :: William's Portfolio ::                (v4.0.7)`
 
-const compactBanner = `
-╦ ╦╦╦  ╦  ╦╔═╗╔╦╗
-║║║║║  ║  ║╠═╣║║║
-╚╩╝╩╩═╝╩═╝╩╩ ╩╩ ╩
-
-:: William's Portfolio ::`;
 
 const lines = [
 
@@ -130,7 +124,7 @@ async function typeLine(terminal, line) {
     const logger =
         `<span class="text-violet-300">${line.logger}</span> - `;
 
-        div.innerHTML = timestamp + level + logger + line.text;
+    div.innerHTML = timestamp + level + logger + line.text;
 }
 
 export async function showBootScreen() {
@@ -145,10 +139,10 @@ export async function showBootScreen() {
     const bannerDiv = document.createElement("div");
 
     bannerDiv.className =
-        "font-mono text-[11px] sm:text-[13px] leading-5 sm:leading-6 whitespace-pre-wrap sm:whitespace-pre text-neutral-300 overflow-x-auto";
+        "font-mono text-[11px] sm:text-[13px] leading-5 sm:leading-6 whitespace-pre text-neutral-300 overflow-x-auto";
 
     terminal.appendChild(bannerDiv);
-    bannerDiv.innerHTML = isMobileViewport() ? compactBanner : banner;
+    bannerDiv.textContent = banner;
 
     for (const line of lines) {
 
