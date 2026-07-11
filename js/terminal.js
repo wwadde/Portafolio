@@ -11,9 +11,9 @@ const banner = `
  :: William's Portfolio ::                (v4.0.7)`
 
 const compactBanner = `
-██╗    ██╗██╗██╗     ██╗     ██╗ █████╗
-██║    ██║██║██║     ██║     ██║██╔══██╗
-██║ █╗ ██║██║██║     ██║     ██║███████║
+╦ ╦╦╦  ╦  ╦╔═╗╔╦╗
+║║║║║  ║  ║╠═╣║║║
+╚╩╝╩╩═╝╩═╝╩╩ ╩╩ ╩
 
 :: William's Portfolio ::`;
 
@@ -148,7 +148,7 @@ export async function showBootScreen() {
         "font-mono text-[11px] sm:text-[13px] leading-5 sm:leading-6 whitespace-pre-wrap sm:whitespace-pre text-neutral-300 overflow-x-auto";
 
     terminal.appendChild(bannerDiv);
-    bannerDiv.innerHTML = banner;
+    bannerDiv.innerHTML = isMobileViewport() ? compactBanner : banner;
 
     for (const line of lines) {
 
