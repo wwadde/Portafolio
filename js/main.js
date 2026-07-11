@@ -1,46 +1,136 @@
 import { displayProjects } from './projects.js';
 import { toggleLang, applyTranslations, t, getLang } from './i18n.js';
 import emailjs from '@emailjs/browser';
+import { animate } from 'animejs';
 import { initCodeEditor } from "./editor.js";
 import { showBootScreen } from "./terminal.js";
 
+let contactInfoLoaded = false;
+let cvLoaded = false;
+let lazySectionsRevealed = false;
+
 document.addEventListener('DOMContentLoaded', async function () {
     const navLinks = document.querySelectorAll('.nav-link');
-    const sections = document.querySelectorAll('.section');
+    const allSections = Array.from(document.querySelectorAll('.section'));
+    const persistentSections = document.querySelectorAll('#home, #about, #projects');
+    const lazySections = document.querySelectorAll('#cv, #contact');
+    const persistentSectionIds = new Set(['#home', '#about', '#projects']);
+    const lazySectionIds = new Set(['#cv', '#contact']);
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
     const langToggle = document.getElementById('lang-toggle');
+    const revealedSections = new Set(['home']);
+    let scrollSyncPending = false;
+    const sectionRevealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (!entry.isIntersecting) {
+                return;
+            }
+
+            const section = entry.target;
+
+            if (revealedSections.has(section.id)) {
+                return;
+            }
+
+            revealedSections.add(section.id);
+            animate(section, {
+                opacity: [0, 1],
+                translateY: [28, 0],
+                duration: 1100,
+                easing: 'easeOutExpo'
+            });
+        });
+    }, {
+        threshold: 0.35,
+    });
 
 
 
     // Diferir la inicialización de EmailJS hasta que sea necesario
     let emailJSInitialized = false;
 
-    function showSection(targetId) {
-        sections.forEach(section => section.classList.remove('active'));
-
-        const targetSection = document.querySelector(targetId);
-        if (targetSection) {
-            targetSection.classList.add('active');
-            targetSection.classList.add('loading');
+    persistentSections.forEach(section => section.classList.add('active'));
+    allSections.forEach(section => {
+        if (section.id !== 'home') {
+            sectionRevealObserver.observe(section);
         }
+    });
 
+    
+
+    function setActiveNav(targetId) {
         navLinks.forEach(link => link.classList.remove('active'));
 
         const activeLink = document.querySelector(`a[href="${targetId}"]`);
         if (activeLink) activeLink.classList.add('active');
     }
 
+    function getSectionInView() {
+        const activationLine = window.innerHeight * 0.35;
+        let currentSectionId = '#home';
+
+        allSections.forEach(section => {
+            if (!section.classList.contains('active')) {
+                return;
+            }
+
+            const rect = section.getBoundingClientRect();
+            if (rect.top <= activationLine) {
+                currentSectionId = `#${section.id}`;
+            }
+        });
+
+        return currentSectionId;
+    }
+
+    function syncNavbarToScroll() {
+        setActiveNav(getSectionInView());
+    }
+
+    function revealLazySections() {
+        if (lazySectionsRevealed) {
+            return;
+        }
+
+        lazySectionsRevealed = true;
+
+        lazySections.forEach(section => {
+            section.classList.add('active');
+        });
+
+        displayContactInfo(true);
+        updateCV(true);
+    }
+
+    function navigateTo(targetId) {
+        const targetSection = document.querySelector(targetId);
+        if (!targetSection) return;
+
+        if (persistentSectionIds.has(targetId)) {
+            targetSection.classList.add('active');
+            targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            setActiveNav(targetId);
+            return;
+        }
+
+        if (lazySectionIds.has(targetId)) {
+            revealLazySections();
+            targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            setActiveNav(targetId);
+        }
+    }
+
     navLinks.forEach(link => {
         link.addEventListener('click', function (e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');
-            showSection(targetId);
+            navigateTo(targetId);
 
-            if (targetId === '#contact') displayContactInfo();
+            if (targetId === '#contact') displayContactInfo(true);
             if (targetId === '#cv') {
                 // Cargar CV de forma segura
-                updateCV();
+                updateCV(true);
             }
 
             navMenu.classList.remove('active');
@@ -53,10 +143,10 @@ document.addEventListener('DOMContentLoaded', async function () {
             btn.addEventListener('click', function (e) {
                 e.preventDefault();
                 const targetId = this.getAttribute('href');
-                showSection(targetId);
-                if (targetId === '#contact') displayContactInfo();
+                navigateTo(targetId);
+                if (targetId === '#contact') displayContactInfo(true);
                 if (targetId === '#cv') {
-                    updateCV();
+                    updateCV(true);
                 }
             });
         }
@@ -71,7 +161,14 @@ document.addEventListener('DOMContentLoaded', async function () {
     langToggle.addEventListener('click', function () {
         toggleLang();
         displayProjects();
-        updateCV();
+
+        if (contactInfoLoaded || document.querySelector('#contact')?.classList.contains('active')) {
+            displayContactInfo();
+        }
+
+        if (cvLoaded || document.querySelector('#cv')?.classList.contains('active')) {
+            updateCV();
+        }
     });
 
     const contactForm = document.getElementById('contact-form');
@@ -119,6 +216,24 @@ document.addEventListener('DOMContentLoaded', async function () {
         } else {
             navbar.style.background = 'rgba(255, 255, 255, 0.95)';
         }
+
+        if (!scrollSyncPending) {
+            scrollSyncPending = true;
+
+            window.requestAnimationFrame(() => {
+                syncNavbarToScroll();
+                scrollSyncPending = false;
+            });
+        }
+
+        if (!lazySectionsRevealed) {
+            const scrollBottom = window.scrollY + window.innerHeight;
+            const pageBottom = document.documentElement.scrollHeight;
+
+            if (scrollBottom >= pageBottom - 48) {
+                revealLazySections();
+            }
+        }
     });
 
 
@@ -129,11 +244,12 @@ document.addEventListener('DOMContentLoaded', async function () {
     await initCodeEditor();
 
     displayProjects();
+    syncNavbarToScroll();
 
 
 });
 
-function displayContactInfo() {
+function displayContactInfo(force = false) {
 
     const emailContainer = document.getElementById('email-card-obf');
     const whatsappContainer = document.getElementById('wa-obf');
@@ -141,6 +257,12 @@ function displayContactInfo() {
     if (!emailContainer || !whatsappContainer) {
         return;
     }
+
+    if (!force && !document.querySelector('#contact')?.classList.contains('active')) {
+        return;
+    }
+
+    contactInfoLoaded = true;
 
     const p1 = "d2lsbGlhbQ==";
     const p2 = "d2FkZGU=";
@@ -236,7 +358,7 @@ function displayContactInfo() {
     setupCopyEmail(email);
 }
 
-function updateCV() {
+function updateCV(force = false) {
     const lang = getLang();
     const cvPath = `/assets/CV_William Wadde_${lang}.pdf`;
 
@@ -248,6 +370,12 @@ function updateCV() {
         console.warn('No se han encontrado los elementos para mostrar o descargar el CV.');
         return;
     }
+
+    if (!force && !document.querySelector('#cv')?.classList.contains('active')) {
+        return;
+    }
+
+    cvLoaded = true;
 
     // Actualizar elementos de forma segura
     cvViewer?.setAttribute('src', cvPath);

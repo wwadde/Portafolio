@@ -8,12 +8,6 @@
   --shadow-brand: 0 10px 30px rgba(92, 21, 163, 0.1);
   --shadow-brand-hover: 0 20px 40px rgba(92, 21, 163, 0.2);
   --shadow-brand-strong: 0 15px 40px rgba(92, 21, 163, 0.3);
-
-  --animate-float: float 6s ease-in-out infinite;
-  --animate-fade-in-up: fadeInUp 0.8s ease both;
-  --animate-fade-in-up-d1: fadeInUp 0.8s ease 0.2s both;
-  --animate-fade-in-up-d2: fadeInUp 0.8s ease 0.4s both;
-  --animate-fade-in-up-d3: fadeInUp 0.8s ease 0.6s both;
 }
 
 html {
@@ -143,35 +137,12 @@ body {
   transform: translateY(0);
 }
 
-.section.loading {
-  animation: fadeInUp 0.6s ease forwards;
-}
-
 .form-input:focus {
   outline: none;
   border-color: var(--color-primary);
   box-shadow: 0 0 0 3px rgba(92, 21, 163, 0.1);
 }
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-}
 
 .project-img {
   width: 100%;
