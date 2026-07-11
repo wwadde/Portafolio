@@ -10,10 +10,16 @@ const banner = `
                                                    
  :: William's Portfolio ::                (v4.0.7)`
 
+const compactBanner = `
+██╗    ██╗██╗██╗     ██╗     ██╗ █████╗
+██║    ██║██║██║     ██║     ██║██╔══██╗
+██║ █╗ ██║██║██║     ██║     ██║███████║
+
+:: William's Portfolio ::`;
+
 const lines = [
 
     {
-        timestamp: "2026-07-10 16:32:14",
         level: "INFO",
         color: "text-emerald-400",
         logger: "c.w.PortfolioApplication",
@@ -21,7 +27,6 @@ const lines = [
     },
 
     {
-        timestamp: "2026-07-10 16:32:14",
         level: "INFO",
         color: "text-emerald-400",
         logger: "c.w.PortfolioApplication",
@@ -29,7 +34,6 @@ const lines = [
     },
 
     {
-        timestamp: "2026-07-10 16:32:15",
         level: "INFO",
         color: "text-emerald-400",
         logger: "o.s.d.r.c.RepositoryConfig",
@@ -37,7 +41,6 @@ const lines = [
     },
 
     {
-        timestamp: "2026-07-10 16:32:15",
         level: "INFO",
         color: "text-emerald-400",
         logger: "o.s.d.r.c.RepositoryConfig",
@@ -45,7 +48,6 @@ const lines = [
     },
 
     {
-        timestamp: "2026-07-10 16:32:15",
         level: "INFO",
         color: "text-emerald-400",
         logger: "com.zaxxer.hikari.HikariDataSource",
@@ -53,7 +55,6 @@ const lines = [
     },
 
     {
-        timestamp: "2026-07-10 16:32:15",
         level: "INFO",
         color: "text-emerald-400",
         logger: "com.zaxxer.hikari.HikariDataSource",
@@ -61,7 +62,6 @@ const lines = [
     },
 
     {
-        timestamp: "2026-07-10 16:32:16",
         level: "INFO",
         color: "text-emerald-400",
         logger: "o.s.b.w.e.tomcat.TomcatWebServer",
@@ -69,7 +69,6 @@ const lines = [
     },
 
     {
-        timestamp: "2026-07-10 16:32:16",
         level: "INFO",
         color: "text-emerald-400",
         logger: "o.a.coyote.http11.Http11NioProtocol",
@@ -77,7 +76,6 @@ const lines = [
     },
 
     {
-        timestamp: "2026-07-10 16:32:16",
         level: "INFO",
         color: "text-emerald-400",
         logger: "o.a.catalina.core.StandardService",
@@ -85,7 +83,6 @@ const lines = [
     },
 
     {
-        timestamp: "2026-07-10 16:32:16",
         level: "INFO",
         color: "text-emerald-400",
         logger: "o.a.catalina.core.StandardEngine",
@@ -93,7 +90,6 @@ const lines = [
     },
 
     {
-        timestamp: "2026-07-10 16:32:17",
         level: "INFO",
         color: "text-emerald-400",
         logger: "o.s.b.w.s.c.ServletWebServerApplicationContext",
@@ -101,7 +97,6 @@ const lines = [
     },
 
     {
-        timestamp: "2026-07-10 16:32:18",
         level: "INFO",
         color: "text-emerald-400",
         logger: "c.w.PortfolioApplication",
@@ -113,17 +108,21 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+function isMobileViewport() {
+    return window.matchMedia('(max-width: 640px)').matches;
+}
+
 async function typeLine(terminal, line) {
 
     const div = document.createElement("div");
 
     div.className =
-        "font-mono text-[13px] leading-6 whitespace-pre text-neutral-300";
+        "font-mono text-[11px] sm:text-[13px] leading-5 sm:leading-6 whitespace-pre-wrap sm:whitespace-pre text-neutral-300";
 
     terminal.appendChild(div);
 
     const timestamp =
-        `<span class="text-neutral-500">${line.timestamp}</span> `;
+        `<span class="text-neutral-500">${getCurrentTimestamp()}</span> `;
 
     const level =
         `<span class="${line.color} font-semibold">${line.level}</span> `;
@@ -146,7 +145,7 @@ export async function showBootScreen() {
     const bannerDiv = document.createElement("div");
 
     bannerDiv.className =
-        "font-mono text-[13px] leading-6 whitespace-pre text-neutral-300";
+        "font-mono text-[11px] sm:text-[13px] leading-5 sm:leading-6 whitespace-pre-wrap sm:whitespace-pre text-neutral-300 overflow-x-auto";
 
     terminal.appendChild(bannerDiv);
     bannerDiv.innerHTML = banner;
@@ -155,15 +154,15 @@ export async function showBootScreen() {
 
         await typeLine(terminal, line);
 
-        await sleep(600);
+        await sleep(isMobileViewport() ? 420 : 600);
 
     }
 
-    await sleep(1000);
+    await sleep(isMobileViewport() ? 700 : 1000);
 
     await animate(screen, {
         opacity: 0,
-        duration: 700
+        duration: isMobileViewport() ? 550 : 700
     }).finished;
 
     screen.remove();
@@ -174,7 +173,7 @@ export async function showBootScreen() {
 
     await animate(hero, {
         opacity: [0, 1],
-        duration: 400
+        duration: isMobileViewport() ? 300 : 400
     }).finished;
 
     const steps = hero.querySelectorAll(".hero-step");
@@ -184,12 +183,26 @@ export async function showBootScreen() {
         animate(step, {
             opacity: [0, 1],
             translateY: [25, 0],
-            duration: 600,
+            duration: isMobileViewport() ? 450 : 600,
             easing: "easeOutExpo"
         });
 
-        await sleep(410);
+        await sleep(isMobileViewport() ? 280 : 410);
 
     }
 
+}
+
+function getCurrentTimestamp() {
+    const now = new Date();
+
+    const year = now.getFullYear();
+    const month = String(now.getMonth() + 1).padStart(2, "0");
+    const day = String(now.getDate()).padStart(2, "0");
+
+    const hours = String(now.getHours()).padStart(2, "0");
+    const minutes = String(now.getMinutes()).padStart(2, "0");
+    const seconds = String(now.getSeconds()).padStart(2, "0");
+
+    return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
 }
