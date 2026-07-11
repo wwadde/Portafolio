@@ -1,8 +1,10 @@
 import { displayProjects } from './projects.js';
 import { toggleLang, applyTranslations, t, getLang } from './i18n.js';
 import emailjs from '@emailjs/browser';
+import { initCodeEditor } from "./editor.js";
+import { showBootScreen } from "./terminal.js";
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', async function () {
     const navLinks = document.querySelectorAll('.nav-link');
     const sections = document.querySelectorAll('.section');
     const hamburger = document.querySelector('.hamburger');
@@ -119,8 +121,15 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
+
     applyTranslations();
+
+    await showBootScreen();
+
+    await initCodeEditor();
+
     displayProjects();
+
 
 });
 

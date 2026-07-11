@@ -27,6 +27,16 @@ body {
   overflow-x: hidden;
 }
 
+.hero-step {
+    opacity: 0;
+    transform: translateY(25px);
+    will-change: transform, opacity;
+}
+
+#hero-content {
+    transition: opacity .25s ease;
+}
+
 .gradient-text {
   background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
   -webkit-background-clip: text;

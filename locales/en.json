@@ -9,14 +9,14 @@
   },
   "hero": {
     "title": "Hi, I'm <span class=\"gradient-text\">William Wadde</span>",
-    "subtitle": "Backend Developer Java/Typescript",
-    "description": "I turn problems into solutions",
+    "subtitle": "Software Developer | Java | Full Stack",
+    "description": "I develop software with a backend focus while also building modern, functional user interfaces when a project requires a full-stack approach",
     "cta_projects": "My projects",
     "cta_contact": "Get in touch"
   },
   "about": {
     "title": "About me",
-    "description": "I'm a backend developer specialized in Java and Spring Boot, with experience building secure microservices, integrating external services, and implementing design patterns. Although my strength is backend, I also build attractive interfaces with Angular and have a deep understanding of frontend work. My focus is creating solid, scalable, and maintainable solutions.",
+    "description": "I am a software developer with a backend focus, specializing in Java and Spring Boot. I have experience designing microservices, building secure REST APIs, integrating external services, and modeling databases for scalable applications. I also have full-stack development experience with Angular and server-side templating engines, allowing me to contribute across the entire development lifecycle and deliver complete solutions.",
     "skills_title": "Technologies I work with",
     "skill_db": "Relational databases"
   },

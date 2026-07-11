@@ -1,0 +1,50 @@
+/* Fondo del editor */
+pre[class*="language-"],
+code[class*="language-"] {
+    background: #16111f62;
+    color: #f3f4f6d2;
+}
+
+/* Comentarios */
+.token.comment {
+    color: #7c8099;
+    font-style: italic;
+}
+
+/* Keywords */
+.token.keyword {
+    color: #a955f7e1;
+    font-weight: 600;
+}
+
+/* Anotaciones */
+.token.annotation {
+    color: #c084fc;
+}
+
+/* Clases */
+.token.class-name {
+    color: #d8b4fe;
+}
+
+/* Métodos */
+.token.function {
+    color: #f5d0fe;
+}
+
+/* Strings */
+.token.string {
+    color: #6ee7b7;
+}
+
+/* Números y booleanos */
+.token.number,
+.token.boolean {
+    color: #fbbf24;
+}
+
+/* Operadores y puntuación */
+.token.operator,
+.token.punctuation {
+    color: #d1d5db;
+}

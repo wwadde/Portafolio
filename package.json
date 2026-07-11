@@ -15,6 +15,8 @@
     "vite": "^7.3.1"
   },
   "dependencies": {
-    "@emailjs/browser": "^4.4.1"
+    "@emailjs/browser": "^4.4.1",
+    "animejs": "^4.5.0",
+    "prismjs": "^1.30.0"
   }
 }
