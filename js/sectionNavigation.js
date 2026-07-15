@@ -51,8 +51,13 @@ export function initSectionNavigation({
             return;
         }
 
+        const sectionContent = section.querySelector('.section-content');
+        if (!sectionContent) {
+            return;
+        }
+
         revealedSections.add(section.id);
-        animate(section, {
+        animate(sectionContent, {
             opacity: [0, 1],
             translateY: [28, 0],
             duration: 1100,
