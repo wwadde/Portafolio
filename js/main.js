@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     });
 
     initContactSection();
+    displayProjects();
 
     langToggle?.addEventListener('click', function () {
         toggleLang();
@@ -26,9 +27,13 @@ document.addEventListener('DOMContentLoaded', async function () {
 
     applyTranslations();
 
-    await showBootScreen();
-    await initCodeEditor();
+    document.body.classList.add("loading");
 
-    displayProjects();
+    await showBootScreen();
+
+    document.body.classList.remove("loading");
+    
+    initCodeEditor();
+
     syncNavbarToScroll();
 });

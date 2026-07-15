@@ -21,6 +21,13 @@ body {
   overflow-x: hidden;
 }
 
+.loading {
+    position: fixed;
+    overflow: hidden;
+    width: 100%;
+    inset: 0;
+}
+
 .hero-step {
     opacity: 0;
     transform: translateY(25px);
