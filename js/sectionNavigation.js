@@ -5,7 +5,7 @@ export function initSectionNavigation({
     hamburger = document.querySelector('.hamburger'),
     navMenu = document.querySelector('.nav-menu'),
     sections = Array.from(document.querySelectorAll('.section')),
-    onLazySectionsReveal = () => {},
+    onLazySectionsReveal = () => { },
 } = {}) {
     const persistentSectionIds = new Set(['#home', '#about', '#projects']);
     const lazySectionIds = new Set(['#cv', '#contact']);
@@ -46,42 +46,43 @@ export function initSectionNavigation({
         setActiveNav(getSectionInView());
     }
 
-    function playSectionReveal(section) {
-        if (!section || revealedSections.has(section.id)) {
-            return;
-        }
+    function observeRevealItems(root = document) {
+        root.querySelectorAll('.reveal-item').forEach(element => {
+            if (!element.dataset.revealObserved) {
+                element.dataset.revealObserved = 'true';
+                revealObserver.observe(element);
+            }
+        });
+    }
 
-        const sectionContent = section.querySelector('.section-content');
-        if (!sectionContent) {
-            return;
-        }
-
-        revealedSections.add(section.id);
-        animate(sectionContent, {
+    function revealElement(element) {
+        animate(element, {
             opacity: [0, 1],
-            translateY: [28, 0],
-            duration: 1100,
+            translateY: [32, 0],
+            scale: [0.96, 1],
+            duration: 750,
             easing: 'easeOutExpo'
         });
     }
 
-    const sectionRevealObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+
             if (!entry.isIntersecting) {
                 return;
             }
 
-            playSectionReveal(entry.target);
+            revealElement(entry.target);
+
+            revealObserver.unobserve(entry.target);
         });
+
     }, {
-        threshold: 0.35,
+        threshold: 0.15,
+        rootMargin: '0px 0px -10% 0px'
     });
 
-    sections.forEach(section => {
-        if (section.id !== 'home') {
-            sectionRevealObserver.observe(section);
-        }
-    });
+    observeRevealItems();
 
     function revealLazySections() {
         if (lazySectionsRevealed) {
@@ -95,6 +96,9 @@ export function initSectionNavigation({
         });
 
         onLazySectionsReveal();
+        requestAnimationFrame(() => {
+            observeRevealItems();
+        });
         syncNavbarToScroll();
     }
 
@@ -174,5 +178,6 @@ export function initSectionNavigation({
     return {
         syncNavbarToScroll,
         revealLazySections,
+        observeRevealItems
     };
 }

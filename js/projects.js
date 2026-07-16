@@ -140,7 +140,7 @@ export function displayProjects() {
 
     projects.forEach((project, projectIndex) => {
         const card = document.createElement('div');
-        card.className = 'bg-white rounded-2xl overflow-hidden shadow-brand hover:-translate-y-2 hover:shadow-brand-hover transition-all duration-300';
+        card.className = 'reveal-item bg-white rounded-2xl overflow-hidden shadow-brand hover:-translate-y-2 hover:shadow-brand-hover transition-all duration-300';
 
         const title = project.title[lang] ?? project.title.es;
         const description = project.description[lang] ?? project.description.es;
@@ -223,6 +223,8 @@ export function displayProjects() {
 
     const carousels = initCarousels();
     initImageModal(projects, carousels);
+    document.dispatchEvent(new CustomEvent('projects-rendered'));
+
 }
 
 function initCarousels() {

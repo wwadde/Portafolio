@@ -38,10 +38,11 @@ body {
     transition: opacity .25s ease;
 }
 
-.section-content {
-  opacity: 0;
-  transform: translateY(24px);
-  will-change: opacity, transform;
+
+.reveal-item {
+    opacity: 0;
+    transform: translateY(32px) scale(.96);
+    will-change: transform, opacity;
 }
 
 .gradient-text {

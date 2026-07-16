@@ -37,7 +37,7 @@
     <link rel="stylesheet" href="/main.css">
 </head>
 
-<body class="bg-white loading">
+<body class="bg-white">
     <div id="boot-screen" class="fixed inset-0 z-[9999] flex items-center justify-center bg-neutral-950">
 
         <div class="w-full max-w-3xl rounded-xl overflow-hidden
@@ -236,10 +236,10 @@
             <h2 class="gradient-text text-center text-3xl sm:text-4xl lg:text-5xl mb-12 font-bold"
                 data-i18n="about.title">Acerca de mi</h2>
             <div class="max-w-3xl mx-auto text-center">
-                <p class="text-base sm:text-lg leading-relaxed mb-8 text-gray-700" data-i18n="about.description">
+                <p class="reveal-item text-base sm:text-lg leading-relaxed mb-8 text-gray-700" data-i18n="about.description">
                     Soy desarrollador de software con énfasis en backend, especializado en Java y Spring Boot. Tengo experiencia en el diseño de microservicios, la construcción de APIs REST seguras, la integración de servicios externos y el modelado de bases de datos para aplicaciones escalables. Además, cuento con experiencia en desarrollo full stack utilizando Angular y motores de plantillas, lo que me permite participar en todo el ciclo de desarrollo y entregar soluciones completas.
                 </p>
-                <div>
+                <div class="reveal-item">
                     <h3 class="text-primary text-xl font-semibold mb-6" data-i18n="about.skills_title">Tecnologías que
                         manejo</h3>
                     <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 lg:gap-6 mt-6">
@@ -376,7 +376,7 @@
         <div class="section-content max-w-7xl mx-auto px-4 sm:px-8">
             <h2 class="gradient-text text-center text-3xl sm:text-4xl lg:text-5xl mb-8 font-bold" data-i18n="cv.title">
                 Curriculum Vitae</h2>
-            <p class="text-center text-gray-600 mb-8 text-sm sm:text-base" data-i18n="cv.description">Puedes descargar
+            <p class="reveal-item text-center text-gray-600 mb-8 text-sm sm:text-base" data-i18n="cv.description">Puedes descargar
                 mi CV o verlo a continuación</p>
             <div class="flex justify-center mb-6">
                 <a id="cv-download" href="/assets/CV_William Wadde_es.pdf" download
@@ -412,7 +412,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16 max-w-5xl mx-auto">
 
                 <!-- Información de contacto -->
-                <div>
+                <div class="reveal-item">
 
                     <!-- Titulo -->
                     <h3 class="text-primary text-2xl font-semibold mb-3" data-i18n="contact.heading">
@@ -468,7 +468,7 @@
 
 
                 <!-- Formulario -->
-                <form class="bg-white p-6 sm:p-8 rounded-2xl shadow-brand" id="contact-form">
+                <form class="reveal-item bg-white p-6 sm:p-8 rounded-2xl shadow-brand" id="contact-form">
 
                     <!-- Separador -->
                     <div class="my-10 flex items-center gap-4">
