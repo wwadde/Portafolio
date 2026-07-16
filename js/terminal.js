@@ -1,5 +1,8 @@
 import { animate } from "animejs";
 
+const BOOT_STORAGE_KEY = "portfolio:lastBoot";
+const BOOT_DURATION = 15 * 60 * 1000;
+
 const banner = `
 ██╗    ██╗██╗██╗     ██╗     ██╗ █████╗ ███╗   ███╗
 ██║    ██║██║██║     ██║     ██║██╔══██╗████╗ ████║
@@ -161,7 +164,13 @@ export async function showBootScreen() {
 
     screen.remove();
 
+}
+
+export async function animateHero() {
+
     const hero = document.querySelector("#hero-content");
+
+    if (!hero) return;
 
     hero.classList.remove("opacity-0");
 
@@ -200,3 +209,21 @@ function getCurrentTimestamp() {
 
     return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
 }
+
+export function shouldShowBootScreen() {
+    const lastBoot = Number(sessionStorage.getItem(BOOT_STORAGE_KEY));
+
+    if (!lastBoot) {
+        return true;
+    }
+
+    return Date.now() - lastBoot > BOOT_DURATION;
+}
+
+export function markBootScreenAsShown() {
+    sessionStorage.setItem(
+        BOOT_STORAGE_KEY,
+        Date.now().toString()
+    );
+}
+
