@@ -153,7 +153,7 @@ export function displayContactInfo(force = false) {
 
 export function updateCV(force = false) {
     const lang = getLang();
-    const cvPath = `/assets/CV_William Wadde_${lang}.pdf`;
+    const cvPath = `/assets/cv/CV_William Wadde_${lang}.pdf`;
 
     const cvViewer = document.getElementById('cv-viewer');
     const cvDownload = document.getElementById('cv-download');
