@@ -112,13 +112,13 @@ const projects = [
             en: "Banking Credit System",
         },
         description: {
-            es: "Sistema completo de gestión de créditos bancarios con arquitectura de microservicios, incluyendo autenticación JWT, API Gateway, descubrimiento dinámico de servicios con Eureka y balanceo de carga. Gestiona clientes, cuentas y créditos con seguridad empresarial y alta disponibilidad.",
-            en: "Complete banking credit management system with microservices architecture, featuring JWT authentication, API Gateway, dynamic service discovery with Eureka and load balancing. Manages clients, accounts and credits with enterprise-level security and high availability.",
+            es: "Sistema completo de gestión de créditos bancarios con arquitectura de microservicios, incluyendo autenticación JWT, API Gateway, descubrimiento dinámico de servicios con Eureka y balanceo de carga. Utiliza Apache Kafka para publicar y procesar eventos de dominio, manteniendo desacoplada la comunicación entre servicios. Gestiona clientes, cuentas y créditos con seguridad empresarial y alta disponibilidad.",
+            en: "Complete banking credit management system with a microservices architecture, featuring JWT authentication, API Gateway, dynamic service discovery with Eureka, and load balancing. It uses Apache Kafka to publish and process domain events, keeping communication between services decoupled. Manages clients, accounts, and credits with enterprise-level security and high availability.",
         },
         technologies: [
             "Spring Boot", "Spring Cloud", "Eureka", "OAuth2",
             "API Gateway", "Feign Client", "Circuit Breaker", "Angular 20",
-            "TypeScript", "JWT", "Maven", "REST API",
+            "TypeScript", "JWT", "Apache Kafka", "Maven", "REST API",
         ],
         link: "https://github.com/wwadde/simulacion-credito-bancario",
         images: [
@@ -126,7 +126,9 @@ const projects = [
             "/assets/projects/banco/credito-service.webp",
             "/assets/projects/banco/cuenta-service.webp",
             "/assets/projects/banco/persona-service.webp",
-            "/assets/projects/banco/servicios.webp"
+            "/assets/projects/banco/servicios.webp",
+            "/assets/projects/banco/auth-event.webp",
+            "/assets/projects/banco/pago-cuota.webp"
         ],
     }
 ];
